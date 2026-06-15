@@ -1,0 +1,27 @@
+{
+  "site": {
+    "nom": "Nout Ti Zarlor Péi",
+    "sous_titre": "La Réunion à découvrir, apprendre et transmettre en famille.",
+    "promesse": "Explore les lieux péi, apprends des mots créoles, découvre des souvenirs lontan, joue en famille et garde vivante la culture réunionnaise.",
+    "version": "1.0.0",
+    "langue": "fr",
+    "url": "https://votre-utilisateur.github.io/nout-ti-zarlor-pei/"
+  },
+  "contact": {
+    "email": "bonjour@example.re",
+    "whatsapp": "262692000000",
+    "google_form_url": "https://forms.gle/REMPLACEZ_MOI",
+    "newsletter_url": ""
+  },
+  "reseaux": {
+    "instagram": "https://instagram.com/votre_compte",
+    "facebook": "https://facebook.com/votre_page",
+    "tiktok": "",
+    "youtube": ""
+  },
+  "boutique": {
+    "mode_contact": "email",
+    "_commentaire_mode_contact": "Valeurs possibles : email | whatsapp | form. Détermine l'action des boutons de la boutique et de la participation."
+  },
+  "_aide": "Modifiez ce fichier pour changer les coordonnées, réseaux et l'URL du site. Aucune ligne de code à toucher."
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "carnet-famille",
+    "nom": "Carnet Ti Famille Zarlor",
+    "type": "imprimé",
+    "prix_indicatif": "12 €",
+    "description": "Un carnet à remplir en famille : mots créoles, lieux visités, recettes et souvenirs à garder.",
+    "statut": "bientot",
+    "image": "assets/images/placeholder-product.svg",
+    "bouton_label": "Me prévenir",
+    "lien": ""
+  },
+  {
+    "id": "guide-10-sorties",
+    "nom": "Guide PDF — 10 sorties péi en famille",
+    "type": "numérique",
+    "prix_indicatif": "Gratuit / prix libre",
+    "description": "Dix idées de sorties accessibles, testées et adaptées aux familles, avec conseils pratiques.",
+    "statut": "test",
+    "image": "assets/images/placeholder-product.svg",
+    "bouton_label": "Voir le détail",
+    "lien": ""
+  },
+  {
+    "id": "memory-creole",
+    "nom": "Memory créole imprimable",
+    "type": "jeu",
+    "prix_indicatif": "5 €",
+    "description": "Un jeu de memory à imprimer pour associer mots créoles et images.",
+    "statut": "bientot",
+    "image": "assets/images/placeholder-product.svg",
+    "bouton_label": "Me prévenir",
+    "lien": ""
+  },
+  {
+    "id": "partenariat-kartie",
+    "nom": "Partenariat « Zarlor dann kartié »",
+    "type": "partenariat",
+    "prix_indicatif": "Sur devis",
+    "description": "Vous êtes un restaurant, un gîte, un artisan ou une association ? Proposez un zarlor à faire découvrir aux familles.",
+    "statut": "disponible",
+    "image": "assets/images/placeholder-product.svg",
+    "bouton_label": "Proposer un partenariat",
+    "lien": ""
+  }
+]

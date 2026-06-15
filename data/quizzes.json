@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q1",
+    "question": "Que veut dire « marmay » en créole réunionnais ?",
+    "type": "creole_vers_fr",
+    "image": "",
+    "audio": "",
+    "options": ["Marmite", "Enfant(s)", "Marché", "Matin"],
+    "bonne_reponse": "Enfant(s)",
+    "explication": "« Marmay » désigne un enfant ou les enfants.",
+    "niveau": "facile",
+    "categorie": "famille"
+  },
+  {
+    "id": "q2",
+    "question": "Comment dit-on « maison » en créole ?",
+    "type": "fr_vers_creole",
+    "image": "",
+    "audio": "",
+    "options": ["Kaz", "Kari", "Kart", "Kabar"],
+    "bonne_reponse": "Kaz",
+    "explication": "« Kaz » signifie maison ; la case créole désigne aussi l'habitat traditionnel.",
+    "niveau": "facile",
+    "categorie": "famille"
+  },
+  {
+    "id": "q3",
+    "question": "Le mot « zarlor » signifie « trésor ».",
+    "type": "vrai_faux",
+    "image": "",
+    "audio": "",
+    "options": ["Vrai", "Faux"],
+    "bonne_reponse": "Vrai",
+    "explication": "Exact : « zarlor » veut bien dire trésor.",
+    "niveau": "facile",
+    "categorie": "quotidien"
+  },
+  {
+    "id": "q4",
+    "question": "En graphie KWZ, comment écrit-on le mot que le 77 note « pié » ?",
+    "type": "choix_multiple",
+    "image": "",
+    "audio": "",
+    "options": ["pyé", "pier", "pied", "piè"],
+    "bonne_reponse": "pyé",
+    "explication": "La graphie KWZ (1983) étend l'usage de w et y : « pié » devient « pyé ».",
+    "niveau": "avance",
+    "categorie": "langue"
+  },
+  {
+    "id": "q5",
+    "question": "Devinette : objet lontan, en métal, on cuisinait le cari dessus au feu de bois. Kosa mi lé ?",
+    "type": "devinette",
+    "image": "assets/images/placeholder-article.svg",
+    "audio": "",
+    "options": ["La marmit", "La pilon", "Le féblan", "La rape"],
+    "bonne_reponse": "La marmit",
+    "explication": "La marmite (« marmit ») servait à mijoter le cari sur le feu de bois.",
+    "niveau": "moyen",
+    "categorie": "lontan"
+  }
+]

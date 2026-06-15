@@ -1,0 +1,26 @@
+[
+  {
+    "id": "la-marmit",
+    "titre": "La marmite au feu de bois",
+    "categorie": "objet lontan",
+    "date": "2025-01-01",
+    "image": "assets/images/placeholder-article.svg",
+    "resume": "Avant le gaz, le cari mijotait des heures sur le feu de bois, dans la grande marmite en fonte.",
+    "contenu": "La cuisine au feu de bois faisait partie du quotidien. La marmite noircie passait de génération en génération. Le goût fumé du cari, on ne le retrouve pas tout à fait sur une cuisinière moderne. Ce souvenir illustre un mode de vie ; les détails précis sont à compléter avec des témoignages de famille.",
+    "source": "Témoignage à recueillir",
+    "tags": ["cuisine", "objet", "feu de bois"],
+    "a_verifier": true
+  },
+  {
+    "id": "lecole-lontan",
+    "titre": "L'école lontan",
+    "categorie": "école",
+    "date": "2025-01-02",
+    "image": "assets/images/placeholder-article.svg",
+    "resume": "Le plumier, l'ardoise, les billes dans la cour : petites scènes d'une école d'autrefois.",
+    "contenu": "Beaucoup se souviennent du chemin de l'école pieds nus, des jeux de billes et des récréations à l'ombre du grand arbre. Article d'exemple : à enrichir avec des souvenirs réels et leurs sources avant publication.",
+    "source": "Souvenirs à recueillir",
+    "tags": ["école", "enfance", "memoire"],
+    "a_verifier": true
+  }
+]

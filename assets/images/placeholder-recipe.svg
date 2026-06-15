@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Recette péi">
+  <rect width="640" height="420" fill="#FBF1DE"/>
+  <ellipse cx="320" cy="240" rx="160" ry="150" fill="#fff"/>
+  <ellipse cx="320" cy="240" rx="120" ry="112" fill="#E8800F"/>
+  <ellipse cx="320" cy="232" rx="118" ry="104" fill="#F4A93A"/>
+  <circle cx="285" cy="215" r="14" fill="#7a3b1f"/><circle cx="345" cy="230" r="16" fill="#9a4a26"/>
+  <circle cx="312" cy="262" r="12" fill="#c0612f"/><circle cx="356" cy="200" r="10" fill="#7a3b1f"/>
+  <path d="M170 240 a150 150 0 0 0 300 0" fill="none" stroke="#5FA052" stroke-width="10" stroke-linecap="round"/>
+  <text x="320" y="402" font-family="system-ui,sans-serif" font-size="22" fill="#5B3A29" text-anchor="middle">Dann marmit</text>
+</svg>
