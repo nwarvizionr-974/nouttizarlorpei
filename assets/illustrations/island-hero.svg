@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" role="img" aria-label="Illustration de La Réunion stylisée">
+  <defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#7A4E2D" flood-opacity=".18"/></filter></defs>
+  <rect width="900" height="640" fill="none"/>
+  <path d="M105 467 C81 343 139 208 260 143 C356 91 500 85 614 130 C735 178 817 285 795 397 C768 532 607 587 459 576 C300 565 129 592 105 467Z" fill="#FFFCF3" filter="url(#shadow)"/>
+  <path d="M224 418 C245 330 300 278 382 237 C430 212 483 185 539 218 C608 257 625 333 582 397 C536 467 447 487 369 471 C315 460 263 461 224 418Z" fill="#3E8E5B" opacity=".92"/>
+  <path d="M355 236 L452 87 L550 238 Z" fill="#7A4E2D"/>
+  <path d="M406 166 C430 180 463 182 493 166 L452 87Z" fill="#D94A38"/>
+  <path d="M146 128 C213 68 291 57 380 74" stroke="#2F80A0" stroke-width="18" stroke-linecap="round" fill="none" opacity=".45"/>
+  <path d="M615 492 C685 448 752 458 811 492" stroke="#2F80A0" stroke-width="18" stroke-linecap="round" fill="none" opacity=".45"/>
+  <circle cx="168" cy="202" r="32" fill="#D94A38"/><circle cx="196" cy="221" r="24" fill="#D94A38"/><circle cx="159" cy="237" r="22" fill="#D94A38"/>
+  <ellipse cx="236" cy="185" rx="38" ry="16" fill="#3E8E5B" transform="rotate(-25 236 185)"/>
+  <path d="M622 193 C662 159 719 161 750 199 C721 216 665 224 622 193Z" fill="#3E8E5B"/>
+  <path d="M662 208 C700 197 760 213 781 258 C738 267 687 252 662 208Z" fill="#3E8E5B" opacity=".85"/>
+  <rect x="622" y="344" width="118" height="88" rx="12" fill="#E8872E"/><path d="M612 348 L681 292 L750 348Z" fill="#7A4E2D"/><path d="M640 378 h80" stroke="#FFF7E6" stroke-width="9" stroke-linecap="round"/><path d="M640 405 h80" stroke="#FFF7E6" stroke-width="9" stroke-linecap="round"/>
+  <path d="M257 501 C322 464 383 472 444 516" stroke="#F7C948" stroke-width="16" fill="none" stroke-linecap="round" stroke-dasharray="4 34"/>
+</svg>

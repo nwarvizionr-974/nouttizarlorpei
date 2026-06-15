@@ -1,309 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
-  <!-- ============ SEO ============ -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nout Ti Zarlor Péi – La Réunion à découvrir en famille</title>
-  <meta name="description" content="Découvre La Réunion en famille avec Nout Ti Zarlor Péi : carte interactive, mots créoles, quiz, recettes péi, souvenirs lontan et trésors culturels à transmettre." />
-  <meta name="theme-color" content="#173B30" />
-  <meta name="author" content="Nout Ti Zarlor Péi" />
-  <link rel="canonical" href="https://votre-utilisateur.github.io/nout-ti-zarlor-pei/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Nout Ti Zarlor Péi – La Réunion à découvrir en famille" />
-  <meta property="og:description" content="Carte interactive, mots créoles, quiz, recettes péi et souvenirs lontan : la culture réunionnaise à découvrir et transmettre en famille." />
-  <meta property="og:image" content="assets/icons/icon-512.png" />
-  <meta property="og:url" content="https://votre-utilisateur.github.io/nout-ti-zarlor-pei/" />
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nout Ti Zarlor Péi" />
-  <meta name="twitter:description" content="La Réunion à découvrir, apprendre et transmettre en famille." />
-  <meta name="twitter:image" content="assets/icons/icon-512.png" />
-
-  <!-- ============ PWA & icônes ============ -->
-  <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="assets/icons/favicon-64.png" sizes="64x64" />
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
-
-  <!-- ============ Polices Google (faciles à changer) ============ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- ============ Leaflet (carte) ============ -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
-  <!-- ============ Styles du site ============ -->
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- ============ Données structurées (schema.org) ============ -->
+  <meta name="description" content="Découvre La Réunion en famille avec Nout Ti Zarlor Péi : carte interactive, mots créoles, quiz, recettes péi, souvenirs lontan et trésors culturels à transmettre.">
+  <meta name="theme-color" content="#F7C948">
+  <meta name="keywords" content="La Réunion, culture réunionnaise, créole réunionnais, sorties en famille à La Réunion, recettes réunionnaises, patrimoine réunionnais, lieux à découvrir à La Réunion, souvenirs lontan, famille réunionnaise">
+  <link rel="canonical" href="./">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nout Ti Zarlor Péi – La Réunion à découvrir en famille">
+  <meta property="og:description" content="Carte interactive, mots créoles, quiz, recettes péi, souvenirs lontan et trésors culturels à transmettre.">
+  <meta property="og:image" content="./assets/illustrations/island-hero.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nout Ti Zarlor Péi">
+  <meta name="twitter:description" content="La Réunion à découvrir, apprendre et transmettre en famille.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./assets/icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="./css/styles.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Nout Ti Zarlor Péi",
-    "url": "https://votre-utilisateur.github.io/nout-ti-zarlor-pei/",
-    "description": "Plateforme culturelle et familiale pour découvrir, apprendre et transmettre la culture réunionnaise.",
-    "inLanguage": "fr",
-    "publisher": { "@type": "Organization", "name": "Nout Ti Zarlor Péi" }
-  }
+  {"@context":"https://schema.org","@type":"WebSite","name":"Nout Ti Zarlor Péi","description":"La Réunion à découvrir, apprendre et transmettre en famille.","inLanguage":"fr-FR","url":"./"}
   </script>
 </head>
-
 <body>
-  <!-- Lien d'évitement (accessibilité clavier) -->
-  <a href="#contenu" class="skip-link">Aller au contenu</a>
-
-  <!-- ====================== HEADER / NAVIGATION ====================== -->
-  <header class="site-header" id="haut">
-    <div class="wrap header-inner">
-      <a class="brand" href="#haut" aria-label="Nout Ti Zarlor Péi — accueil">
-        <img class="brand__mark" src="assets/icons/icon-192.png" alt="" width="40" height="40" />
-        <span class="brand__name">Nout Ti <strong>Zarlor</strong> Péi</span>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="Accueil Nout Ti Zarlor Péi">
+        <img src="./assets/images/logo-zarlor-pei.jpg" onerror="this.style.display='none'" alt="Logo Zarlor Péi" class="brand-logo">
+        <span><strong>Nout Ti Zarlor Péi</strong><small>Ti famille, gran zarlor</small></span>
       </a>
-
-      <nav class="nav" aria-label="Navigation principale">
-        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
-          <span class="nav__bars" aria-hidden="true"></span>
-          <span class="sr-only">Ouvrir le menu</span>
-        </button>
-        <ul class="nav__menu" id="navMenu">
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#carte">Carte péi</a></li>
-          <li><a href="#kreol">Kréol</a></li>
-          <li><a href="#jeux">Jeux</a></li>
-          <li><a href="#recettes">Recettes</a></li>
-          <li><a href="#souvenirs">Souvenirs</a></li>
-          <li><a href="#boutique">Boutique</a></li>
-          <li><a href="#participer">Participer</a></li>
-        </ul>
-      </nav>
-
-      <button class="btn btn--install" id="installBtn" hidden>Installer l'app</button>
-    </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span><span class="sr-only">Menu</span></button>
+      <div class="nav-menu" id="navMenu">
+        <a href="#accueil">Accueil</a>
+        <a href="#carte">Carte péi</a>
+        <a href="#kreol">Kréol</a>
+        <a href="#jeux">Jeux</a>
+        <a href="#recettes">Recettes</a>
+        <a href="#souvenirs">Souvenirs</a>
+        <a href="#boutique">Boutique</a>
+        <a href="#participer">Participer</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn btn-ghost" id="installAppBtn" hidden>Installer l’app</button>
+        <a class="btn btn-primary" href="#carte">Explorer</a>
+      </div>
+    </nav>
   </header>
 
   <main id="contenu">
-
-    <!-- ====================== HERO ====================== -->
-    <section class="hero" id="accueil" aria-labelledby="hero-title">
-      <div class="wrap hero__inner">
-        <div class="hero__text">
-          <p class="eyebrow">Mini application culturelle péi</p>
-          <h1 id="hero-title" class="hero__title">Nout Ti <span class="grad">Zarlor</span> Péi</h1>
-          <p class="hero__sub">La Réunion à découvrir, apprendre et transmettre en famille.</p>
-          <p class="hero__lead">Une mini application culturelle pour explorer les lieux péi, apprendre des mots créoles, jouer en famille, retrouver des souvenirs lontan et transmettre nout culture aux petits comme aux grands.</p>
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#carte">Découvrir la carte</a>
-            <a class="btn btn--ghost" href="#kreol">Apprendre un mot créole</a>
-            <a class="btn btn--ghost" href="#jeux">Jouer en famille</a>
+    <section id="accueil" class="hero section-with-shapes">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Mini plateforme culturelle familiale</p>
+          <h1>Nout Ti Zarlor Péi</h1>
+          <p class="lead">La Réunion à découvrir, apprendre et transmettre en famille.</p>
+          <p>Une mini application culturelle pour explorer les lieux péi, apprendre des mots créoles, jouer en famille, retrouver des souvenirs lontan et garder vivante nout culture.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#carte">Découvrir la carte</a>
+            <a class="btn btn-secondary" href="#kreol">Apprendre un mot créole</a>
+            <a class="btn btn-ghost" href="#jeux">Jouer en famille</a>
+          </div>
+          <div class="hero-stats" aria-label="Modules disponibles">
+            <span><strong id="countPlaces">0</strong> lieux</span>
+            <span><strong id="countWords">0</strong> mots</span>
+            <span><strong id="countQuizzes">0</strong> quiz</span>
           </div>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-          <img src="assets/illustrations/ile.svg" alt="" class="hero__island" width="460" height="420" />
-        </div>
-      </div>
-      <!-- Signature : lambrequin (dentelle de toit créole) -->
-      <div class="lambrequin" aria-hidden="true"></div>
-    </section>
-
-    <!-- ====================== LES UNIVERS ZARLOR ====================== -->
-    <section class="section" id="univers" aria-labelledby="univers-title">
-      <div class="wrap">
-        <p class="eyebrow eyebrow--center">Bienvenue dann nout péi</p>
-        <h2 id="univers-title" class="section__title center">Les univers Zarlor</h2>
-        <div class="grid grid--univers">
-          <a class="ucard u-carte" href="#carte"><span class="ucard__ico">🗺️</span><h3>Carte péi</h3><p>Lieux à découvrir, pique-niques, bassins, points de vue, quartiers, marchés et lieux de mémoire.</p></a>
-          <a class="ucard u-mot" href="#kreol"><span class="ucard__ico">💬</span><h3>Ti mot kréol</h3><p>Mots, expressions, proverbes : traduction, usage et variantes de graphie.</p></a>
-          <a class="ucard u-quiz" href="#jeux"><span class="ucard__ico">🧩</span><h3>Kosa mi lé&nbsp;?</h3><p>Devinettes et quiz : objets lontan, plantes, animaux, lieux et mots.</p></a>
-          <a class="ucard u-marmit" href="#recettes"><span class="ucard__ico">🍲</span><h3>Dann marmit</h3><p>Recettes péi, ingrédients, astuces et souvenirs autour de la cuisine.</p></a>
-          <a class="ucard u-souvenir" href="#souvenirs"><span class="ucard__ico">📻</span><h3>Souvenir lontan</h3><p>Objets, métiers, scènes de vie, traditions et mémoire familiale.</p></a>
-          <a class="ucard u-boutique" href="#boutique"><span class="ucard__ico">🎁</span><h3>Ti boutique</h3><p>Guides PDF, carnets imprimables, jeux, box culturelles et événements à venir.</p></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================== CARTE INTERACTIVE ====================== -->
-    <section class="section section--alt" id="carte" aria-labelledby="carte-title">
-      <div class="wrap">
-        <p class="eyebrow eyebrow--center">Zarlor dann kartié</p>
-        <h2 id="carte-title" class="section__title center">Carte péi</h2>
-        <p class="section__intro center">Trouvez un lieu à découvrir en famille. Filtrez par envie, recherchez, et gardez vos favoris.</p>
-
-        <div class="map-controls">
-          <input type="search" id="placeSearch" class="field" placeholder="Rechercher un lieu, une commune…" aria-label="Rechercher un lieu" />
-          <select id="filterCategorie" class="field" aria-label="Filtrer par catégorie">
-            <option value="">Toutes les catégories</option>
-            <option value="pique-nique">Pique-nique</option>
-            <option value="bassin">Bassin</option>
-            <option value="plage">Plage</option>
-            <option value="point de vue">Point de vue</option>
-            <option value="patrimoine">Patrimoine</option>
-            <option value="marché">Marché</option>
-            <option value="balade">Balade</option>
-            <option value="jardin">Jardin</option>
-            <option value="famille">Famille</option>
-          </select>
-          <select id="filterRegion" class="field" aria-label="Filtrer par région">
-            <option value="">Toutes les régions</option>
-            <option value="Nord">Nord</option><option value="Sud">Sud</option>
-            <option value="Est">Est</option><option value="Ouest">Ouest</option>
-            <option value="Hauts">Hauts</option>
-          </select>
-          <button class="btn btn--soft" id="favToggle" aria-pressed="false">★ Mes favoris</button>
-        </div>
-
-        <div id="map" class="map" role="application" aria-label="Carte interactive des lieux de La Réunion"></div>
-
-        <div class="places-list" id="placesList" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <!-- ====================== KRÉOL DANN POCHE ====================== -->
-    <section class="section" id="kreol" aria-labelledby="kreol-title">
-      <div class="wrap">
-        <p class="eyebrow eyebrow--center">Nout lang</p>
-        <h2 id="kreol-title" class="section__title center">Kréol dann poche</h2>
-
-        <div class="motdujour" id="motDuJour" aria-live="polite"></div>
-
-        <div class="kreol-controls">
-          <input type="search" id="creoleSearch" class="field" placeholder="Rechercher un mot…" aria-label="Rechercher un mot créole" />
-          <select id="creoleCat" class="field" aria-label="Filtrer par catégorie">
-            <option value="">Toutes catégories</option>
-            <option value="famille">Famille</option><option value="cuisine">Cuisine</option>
-            <option value="nature">Nature</option><option value="quotidien">Quotidien</option>
-            <option value="emotion">Émotion</option><option value="lontan">Lontan</option>
-          </select>
-          <p class="appris-compteur">Mots appris&nbsp;: <strong id="apprisCount">0</strong></p>
-        </div>
-
-        <div class="grid grid--mots" id="creoleList"></div>
-
-        <!-- Mini quiz basé sur les mots -->
-        <div class="miniquiz" id="creoleQuiz" hidden>
-          <h3 class="miniquiz__title">Mini défi créole</h3>
-          <p class="miniquiz__q" id="cqQuestion"></p>
-          <div class="miniquiz__opts" id="cqOptions"></div>
-          <p class="miniquiz__feedback" id="cqFeedback" aria-live="polite"></p>
-          <button class="btn btn--soft" id="cqNext">Autre mot</button>
-        </div>
-        <div class="center mt"><button class="btn btn--ghost" id="startCreoleQuiz">Lancer le mini défi</button></div>
-      </div>
-    </section>
-
-    <!-- ====================== JEUX / QUIZ ====================== -->
-    <section class="section section--alt" id="jeux" aria-labelledby="jeux-title">
-      <div class="wrap">
-        <p class="eyebrow eyebrow--center">An plas, partu !</p>
-        <h2 id="jeux-title" class="section__title center">Kosa mi lé&nbsp;?</h2>
-        <p class="section__intro center">Un quiz pour jouer en famille. Correction immédiate, score et badge à la clé.</p>
-
-        <div class="quiz" id="quiz">
-          <div class="quiz__head">
-            <span class="quiz__progress" id="quizProgress">Question 1</span>
-            <span class="quiz__score">Score&nbsp;: <strong id="quizScore">0</strong></span>
+        <div class="hero-visual" aria-label="Illustration tropicale de La Réunion">
+          <div class="sun-card">
+            <img src="./assets/illustrations/island-hero.svg" alt="Carte stylisée de La Réunion avec volcan, case créole et éléments tropicaux">
+            <div class="floating-pill pill-red">Ti zarlor</div>
+            <div class="floating-pill pill-green">Kosa mi lé ?</div>
+            <div class="floating-pill pill-blue">Dann marmit</div>
           </div>
-          <p class="quiz__question" id="quizQuestion">Chargement…</p>
-          <img class="quiz__img" id="quizImg" alt="" hidden />
-          <div class="quiz__options" id="quizOptions"></div>
-          <p class="quiz__feedback" id="quizFeedback" aria-live="polite"></p>
-          <div class="quiz__actions">
-            <button class="btn btn--primary" id="quizNext" hidden>Question suivante</button>
-            <button class="btn btn--ghost" id="quizRestart" hidden>Rejouer</button>
-          </div>
-          <p class="quiz__best">Meilleur score&nbsp;: <strong id="quizBest">0</strong></p>
         </div>
       </div>
     </section>
 
-    <!-- ====================== DANN MARMIT (recettes) ====================== -->
-    <section class="section" id="recettes" aria-labelledby="recettes-title">
-      <div class="wrap">
-        <p class="eyebrow eyebrow--center">Lodèr la kwizine</p>
-        <h2 id="recettes-title" class="section__title center">Dann marmit</h2>
-        <div class="kreol-controls">
-          <input type="search" id="recipeSearch" class="field" placeholder="Rechercher une recette…" aria-label="Rechercher une recette" />
-          <select id="recipeCat" class="field" aria-label="Filtrer par catégorie">
-            <option value="">Toutes</option><option value="plat">Plats</option>
-            <option value="dessert">Desserts</option><option value="boisson">Boissons</option>
-          </select>
+    <section class="univers section" id="univers">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Les univers Zarlor</p>
+          <h2>Une expérience pour apprendre, sortir et transmettre</h2>
+          <p>Chaque rubrique est pensée pour être simple à consulter sur mobile, agréable en famille et facile à enrichir avec tes propres contenus.</p>
         </div>
-        <div class="grid grid--cards" id="recipesList"></div>
-      </div>
-    </section>
-
-    <!-- ====================== SOUVENIR LONTAN (articles) ====================== -->
-    <section class="section section--alt" id="souvenirs" aria-labelledby="souvenirs-title">
-      <div class="wrap">
-        <p class="eyebrow eyebrow--center">Mémwar péi</p>
-        <h2 id="souvenirs-title" class="section__title center">Souvenir lontan</h2>
-        <div class="grid grid--cards" id="articlesList"></div>
-      </div>
-    </section>
-
-    <!-- ====================== BOUTIQUE ====================== -->
-    <section class="section" id="boutique" aria-labelledby="boutique-title">
-      <div class="wrap">
-        <p class="eyebrow eyebrow--center">Pou pli tar</p>
-        <h2 id="boutique-title" class="section__title center">Ti boutique — Zarlor à venir</h2>
-        <p class="section__intro center">Des trésors numériques et imprimés en préparation. Dites-nous ce qui vous tente.</p>
-        <div class="grid grid--cards" id="productsList"></div>
-        <p class="cta-band">Vous êtes un restaurant, un gîte, un artisan ou une association&nbsp;? <a href="#participer">Proposez un zarlor à faire découvrir.</a></p>
-      </div>
-    </section>
-
-    <!-- ====================== PARTICIPER ====================== -->
-    <section class="section section--alt" id="participer" aria-labelledby="participer-title">
-      <div class="wrap narrow">
-        <p class="eyebrow eyebrow--center">Ansanm</p>
-        <h2 id="participer-title" class="section__title center">Partaz out zarlor</h2>
-        <p class="section__intro center">Un mot créole, un proverbe, une recette, une photo, un souvenir, un lieu ou une anecdote&nbsp;? Partagez-le, on construit nout zarlor ensemble.</p>
-        <div class="participate" id="participate">
-          <!-- Boutons remplis par app.js selon /data/settings.json -->
+        <div class="cards-grid feature-grid">
+          <article class="feature-card"><span class="icon">🗺️</span><h3>Carte péi</h3><p>Lieux à découvrir, pique-niques, bassins, points de vue, quartiers, marchés et lieux de mémoire.</p><a href="#carte">Explorer</a></article>
+          <article class="feature-card"><span class="icon">💬</span><h3>Kréol dann poche</h3><p>Mots, expressions, proverbes, traduction, usage et variantes pédagogiques.</p><a href="#kreol">Apprendre</a></article>
+          <article class="feature-card"><span class="icon">🎲</span><h3>Kosa mi lé ?</h3><p>Devinettes, quiz, objets lontan, plantes, animaux et lieux péi.</p><a href="#jeux">Jouer</a></article>
+          <article class="feature-card"><span class="icon">🍲</span><h3>Dann marmit</h3><p>Recettes réunionnaises, ingrédients, astuces et souvenirs autour de la cuisine.</p><a href="#recettes">Cuisiner</a></article>
+          <article class="feature-card"><span class="icon">🧺</span><h3>Souvenir lontan</h3><p>Objets, métiers, scènes de vie, traditions et mémoire familiale.</p><a href="#souvenirs">Se souvenir</a></article>
+          <article class="feature-card"><span class="icon">🎁</span><h3>Ti boutique</h3><p>Guides PDF, carnets imprimables, jeux, box culturelles, ateliers et événements à venir.</p><a href="#boutique">Découvrir</a></article>
         </div>
       </div>
     </section>
 
+    <section id="carte" class="section map-section organic-panel">
+      <div class="container">
+        <div class="section-head split">
+          <div><p class="eyebrow">Carte péi</p><h2>Des zarlor à découvrir en famille</h2><p>Filtre les lieux, ouvre une fiche, garde tes favoris et remplace les exemples par tes vrais lieux vérifiés.</p></div>
+          <div class="favorite-summary"><strong id="favoriteCount">0</strong><span>favori(s)</span></div>
+        </div>
+        <div class="filters card-soft" aria-label="Filtres des lieux">
+          <label>Recherche <input type="search" id="placeSearch" placeholder="Nom, commune, tag…"></label>
+          <label>Catégorie <select id="categoryFilter"><option value="all">Toutes</option></select></label>
+          <label>Région <select id="regionFilter"><option value="all">Toutes</option></select></label>
+        </div>
+        <div class="map-layout">
+          <div id="map" class="map" role="application" aria-label="Carte interactive des lieux"></div>
+          <aside class="place-panel card-soft" aria-label="Liste des lieux">
+            <h3>Lieux affichés</h3>
+            <div id="placesList" class="stack-list"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="kreol" class="section creole-section">
+      <div class="container">
+        <div class="section-head split">
+          <div><p class="eyebrow">Kréol dann poche</p><h2>Un mot, une phrase, une transmission</h2><p>Une base lisible grand public, avec variantes 77 / KWZ / Tangol visibles en mode pédagogique.</p></div>
+          <div class="learned-box"><strong id="learnedCount">0</strong><span>mot(s) appris</span></div>
+        </div>
+        <div class="word-of-day card-highlight" id="wordOfDay"></div>
+        <div class="filters card-soft">
+          <label>Recherche <input type="search" id="creoleSearch" placeholder="kaz, marmay, cuisine…"></label>
+          <label>Catégorie <select id="creoleCategory"><option value="all">Toutes</option></select></label>
+        </div>
+        <div id="creoleList" class="cards-grid word-grid"></div>
+      </div>
+    </section>
+
+    <section id="jeux" class="section quiz-section organic-panel alt">
+      <div class="container narrow">
+        <div class="section-head center">
+          <p class="eyebrow">Kosa mi lé ?</p>
+          <h2>Joue, réponds, apprends</h2>
+          <p>Un mini-jeu familial alimenté par le fichier <code>quizzes.json</code>.</p>
+        </div>
+        <div class="quiz-card card-highlight" id="quizApp">
+          <div class="quiz-meta"><span id="quizProgress">Question 1</span><span>Meilleur score : <strong id="bestScore">0</strong></span></div>
+          <h3 id="quizQuestion">Chargement du quiz…</h3>
+          <img id="quizImage" alt="" hidden>
+          <div id="quizOptions" class="quiz-options"></div>
+          <div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div>
+          <button class="btn btn-primary" id="nextQuestionBtn" hidden>Question suivante</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="recettes" class="section recipes-section">
+      <div class="container">
+        <div class="section-head split"><div><p class="eyebrow">Dann marmit</p><h2>Recettes, gestes et souvenirs</h2><p>Des fiches recettes imprimables à enrichir avec tes propres photos et recettes vérifiées.</p></div></div>
+        <div class="filters card-soft">
+          <label>Recherche <input type="search" id="recipeSearch" placeholder="cari, rougail, dessert…"></label>
+          <label>Catégorie <select id="recipeCategory"><option value="all">Toutes</option></select></label>
+        </div>
+        <div id="recipesList" class="cards-grid content-grid"></div>
+      </div>
+    </section>
+
+    <section id="souvenirs" class="section articles-section organic-panel light">
+      <div class="container">
+        <div class="section-head"><p class="eyebrow">Souvenir lontan</p><h2>Raconter les objets, les gestes et les mémoires</h2><p>Un espace média pour transformer les témoignages et souvenirs en contenus éditoriaux.</p></div>
+        <div id="articlesList" class="cards-grid content-grid"></div>
+      </div>
+    </section>
+
+    <section id="boutique" class="section shop-section">
+      <div class="container">
+        <div class="section-head center"><p class="eyebrow">Les zarlor à venir</p><h2>Guides, jeux, carnets et partenariats</h2><p>Une monétisation douce pour soutenir le projet sans perdre son âme culturelle et familiale.</p></div>
+        <div id="productsList" class="cards-grid product-grid"></div>
+        <div class="partner-card card-highlight">
+          <div><p class="eyebrow">Partenaires</p><h3>Vous êtes un restaurant, un gîte, un artisan, une association ou un lieu culturel ?</h3><p>Proposez un zarlor à faire découvrir aux familles avec une fiche, une histoire, des photos et une présence sur la carte.</p></div>
+          <a class="btn btn-primary" id="partnerLink" href="mailto:contact@zarlorpei.re">Devenir partenaire</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="participer" class="section participate-section organic-panel alt2">
+      <div class="container narrow">
+        <div class="section-head center"><p class="eyebrow">Partaz out zarlor</p><h2>Ta famille connaît un mot, un lieu, une recette ou un souvenir ?</h2><p>Partage une proposition. Chaque contenu doit être relu, vérifié et sourcé avant publication officielle.</p></div>
+        <div class="participate-actions card-soft">
+          <a class="btn btn-primary" id="mailLink" href="mailto:contact@zarlorpei.re">Envoyer par mail</a>
+          <a class="btn btn-secondary" id="whatsappLink" href="https://wa.me/262692000000">WhatsApp</a>
+          <a class="btn btn-ghost" id="formLink" href="#">Google Forms</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ====================== FOOTER ====================== -->
   <footer class="site-footer">
-    <div class="lambrequin lambrequin--up" aria-hidden="true"></div>
-    <div class="wrap footer-inner">
-      <div class="footer-col">
-        <p class="brand brand--footer"><img src="assets/icons/icon-192.png" alt="" width="34" height="34" /><span>Nout Ti Zarlor Péi</span></p>
-        <p class="footer-promise" id="footerPromise"></p>
-      </div>
-      <nav class="footer-col" aria-label="Liens du pied de page">
-        <h4>Naviguer</h4>
-        <a href="#carte">Carte péi</a><a href="#kreol">Kréol</a>
-        <a href="#jeux">Jeux</a><a href="#recettes">Recettes</a>
-        <a href="#participer">Participer</a>
-      </nav>
-      <div class="footer-col">
-        <h4>Suivez-nous</h4>
-        <div class="socials" id="footerSocials"></div>
-        <p class="footer-contact" id="footerContact"></p>
-      </div>
-    </div>
-    <div class="wrap footer-bottom">
-      <p>© <span id="year"></span> Nout Ti Zarlor Péi · v<span id="appVersion"></span></p>
-      <p class="footer-sources">Sources&nbsp;: contenus culturels vérifiés avant publication · <a href="#">Confidentialité</a></p>
-      <a href="#haut" class="to-top" aria-label="Revenir en haut">↑ Haut</a>
+    <div class="container footer-grid">
+      <div><h2>Nout Ti Zarlor Péi</h2><p>La Réunion à découvrir, apprendre et transmettre en famille.</p><p class="small">Version <span id="appVersion">1.0.0</span></p></div>
+      <div><h3>Liens</h3><a href="#carte">Carte péi</a><a href="#kreol">Kréol</a><a href="#jeux">Jeux</a><a href="./admin-local.html">Admin JSON local</a></div>
+      <div><h3>Sources & prudence</h3><p>Les contenus marqués “à vérifier” sont des exemples éditoriaux et doivent être remplacés ou contrôlés avant publication.</p></div>
+      <div><h3>Contact</h3><a id="footerMail" href="mailto:contact@zarlorpei.re">contact@zarlorpei.re</a><a href="#top">Retour en haut ↑</a></div>
     </div>
   </footer>
 
-  <!-- ====================== SCRIPTS ====================== -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" data-close-modal aria-label="Fermer">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="js/app.js"></script>
-  <script src="js/map.js"></script>
-  <script src="js/creole.js"></script>
-  <script src="js/quiz.js"></script>
+  <script src="./js/app.js" defer></script>
+  <script src="./js/map.js" defer></script>
+  <script src="./js/creole.js" defer></script>
+  <script src="./js/quiz.js" defer></script>
 </body>
 </html>

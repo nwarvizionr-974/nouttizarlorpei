@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /admin-local.html
-
-Sitemap: https://votre-utilisateur.github.io/nout-ti-zarlor-pei/sitemap.xml
+Sitemap: https://example.com/sitemap.xml

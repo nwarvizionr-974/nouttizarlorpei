@@ -1,132 +1,108 @@
-/* =========================================================================
-   map.js — Carte interactive (Leaflet) des lieux péi
-   Charge data/places.json, affiche marqueurs + liste, gère filtres,
-   recherche, favoris (localStorage) et fiche lieu en modale.
-   ========================================================================= */
-document.addEventListener("DOMContentLoaded", async () => {
-  const mapEl = document.getElementById("map");
-  if (!mapEl || typeof L === "undefined") return; // Leaflet absent : on sort proprement
+// Carte interactive alimentée par data/places.json
+let zarlorMap = null;
+let placeMarkers = [];
 
-  /* --- Initialisation de la carte centrée sur La Réunion --- */
-  const map = L.map("map", { scrollWheelZoom: false }).setView([-21.115, 55.536], 10);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
-
-  /* --- Marqueur personnalisé aux couleurs du site --- */
-  const icon = L.divIcon({
-    className: "zp-marker",
-    html: '<span style="display:block;width:22px;height:22px;border-radius:50% 50% 50% 0;background:linear-gradient(135deg,#C9A24B,#B0843A);transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 3px 6px rgba(0,0,0,.3)"></span>',
-    iconSize: [22, 22], iconAnchor: [11, 22], popupAnchor: [0, -20]
-  });
-
-  const places = await ZP.getJSON("data/places.json") || [];
-  const listEl = document.getElementById("placesList");
-  const search = document.getElementById("placeSearch");
-  const fCat = document.getElementById("filterCategorie");
-  const fReg = document.getElementById("filterRegion");
-  const favBtn = document.getElementById("favToggle");
-  let markers = [];
-  let favOnly = false;
-
-  /* --- Favoris --- */
-  function favs() { return ZP.store.get("favs", []); }
-  function isFav(id) { return favs().includes(id); }
-  function toggleFav(id) {
-    const f = favs();
-    const i = f.indexOf(id);
-    if (i >= 0) f.splice(i, 1); else f.push(id);
-    ZP.store.set("favs", f);
-  }
-
-  /* --- Rendu d'une fiche lieu (modale) --- */
-  ZP.openPlace = function (p) {
-    const facts = [];
-    if (p.duree_conseillee) facts.push("⏱️ " + p.duree_conseillee);
-    if (p.parking) facts.push("🅿️ Parking");
-    if (p.toilettes) facts.push("🚻 Toilettes");
-    if (p.ombre) facts.push("🌳 Ombre");
-    if (p.poussette) facts.push("👶 Poussette OK");
-    const html = `
-      <button class="modal__close" aria-label="Fermer" onclick="ZP.closeModal()">×</button>
-      <img src="${ZP.esc(p.image)}" alt="" onerror="ZP.imgFallback(this,'place')">
-      <div class="modal__inner">
-        <span class="meta" style="color:var(--gold);font-weight:700">${ZP.esc(p.categorie)} · ${ZP.esc(p.commune)} (${ZP.esc(p.region)})</span>
-        <h2>${ZP.esc(p.nom)}</h2>
-        <p>${ZP.esc(p.description)}</p>
-        <p>${facts.map(f => `<span class="tag">${ZP.esc(f)}</span>`).join(" ")}</p>
-        ${p.anecdote ? `<p><strong>Le saviez-vous&nbsp;?</strong> ${ZP.esc(p.anecdote)}</p>` : ""}
-        ${p.conseil_famille ? `<p style="background:var(--green-soft);padding:.8rem 1rem;border-radius:14px"><strong>Conseil famille&nbsp;:</strong> ${ZP.esc(p.conseil_famille)}</p>` : ""}
-        ${p.a_verifier ? `<p class="tag tag--verif">Info à vérifier avant publication</p>` : ""}
-        <div class="card-actions">
-          <a class="btn btn--primary" href="${ZP.esc(p.lien_google_maps)}" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
-        </div>
-      </div>`;
-    ZP.showModal(html);
-  };
-
-  /* --- Dessine marqueurs + liste selon les filtres --- */
-  function render() {
-    const q = (search?.value || "").toLowerCase();
-    const c = fCat?.value || "";
-    const r = fReg?.value || "";
-    const filtered = places.filter(p =>
-      (!c || p.categorie === c) &&
-      (!r || p.region === r) &&
-      (!favOnly || isFav(p.id)) &&
-      (!q || (p.nom + " " + p.commune + " " + (p.tags || []).join(" ")).toLowerCase().includes(q)));
-
-    // Marqueurs
-    markers.forEach(m => map.removeLayer(m));
-    markers = filtered.map(p => {
-      const m = L.marker([p.latitude, p.longitude], { icon }).addTo(map);
-      m.bindPopup(`<strong>${ZP.esc(p.nom)}</strong><br>${ZP.esc(p.commune)}<br>
-        <button class="link-btn" onclick='ZP.openPlace(${JSON.stringify(p).replace(/'/g, "&#39;")})'>Voir la fiche</button>`);
-      return m;
-    });
-
-    // Liste sous la carte
-    if (listEl) {
-      listEl.innerHTML = filtered.length ? filtered.map(p => `
-        <article class="place-card">
-          <img src="${ZP.esc(p.image)}" alt="${ZP.esc(p.nom)}" loading="lazy" onerror="ZP.imgFallback(this,'place')">
-          <div class="place-card__body">
-            <div class="mot-card__top">
-              <h3>${ZP.esc(p.nom)}</h3>
-              <button class="fav-btn" data-id="${ZP.esc(p.id)}" aria-pressed="${isFav(p.id)}" aria-label="Ajouter aux favoris">★</button>
-            </div>
-            <p class="meta">${ZP.esc(p.commune)} · ${ZP.esc(p.region)}</p>
-            <div>${(p.tags || []).slice(0, 3).map(t => `<span class="tag">${ZP.esc(t)}</span>`).join("")}
-              ${p.a_verifier ? '<span class="tag tag--verif">à vérifier</span>' : ""}</div>
-            <div class="card-actions">
-              <button class="btn btn--ghost" onclick='ZP.openPlace(${JSON.stringify(p).replace(/'/g, "&#39;")})'>Détails</button>
-            </div>
-          </div>
-        </article>`).join("")
-        : `<p class="center">Aucun lieu ne correspond. Essayez d'élargir les filtres.</p>`;
-
-      // Boutons favoris
-      listEl.querySelectorAll(".fav-btn").forEach(b => b.addEventListener("click", () => {
-        toggleFav(b.dataset.id);
-        b.setAttribute("aria-pressed", isFav(b.dataset.id));
-        if (favOnly) render();
-      }));
+async function initMap(){
+  const mapEl = Zarlor.$('#map');
+  if(!mapEl) return;
+  try{
+    const places = await Zarlor.loadJSON('./data/places.json');
+    Zarlor.data.places = places;
+    setupPlaceFilters(places);
+    if(window.L){
+      zarlorMap = L.map('map', {scrollWheelZoom:false}).setView([-21.115, 55.536], 9);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap'}).addTo(zarlorMap);
+    }else{
+      mapEl.innerHTML = '<div class="card-soft"><h3>Carte indisponible</h3><p>Leaflet n’a pas pu être chargé. La liste des lieux reste disponible.</p></div>';
     }
+    renderPlaces(places);
+    updateFavoriteCount();
+  }catch(error){
+    console.warn(error);
+    mapEl.innerHTML = '<div class="card-soft"><h3>Impossible de charger les lieux</h3><p>Vérifie le fichier data/places.json.</p></div>';
   }
+}
 
-  search?.addEventListener("input", render);
-  fCat?.addEventListener("change", render);
-  fReg?.addEventListener("change", render);
-  favBtn?.addEventListener("click", () => {
-    favOnly = !favOnly;
-    favBtn.setAttribute("aria-pressed", favOnly);
-    favBtn.textContent = favOnly ? "★ Tous les lieux" : "★ Mes favoris";
-    render();
+function setupPlaceFilters(places){
+  const cats = [...new Set(places.map(p => p.categorie).filter(Boolean))];
+  const regs = [...new Set(places.map(p => p.region).filter(Boolean))];
+  Zarlor.$('#categoryFilter').innerHTML = '<option value="all">Toutes</option>' + cats.map(c=>`<option value="${c}">${c}</option>`).join('');
+  Zarlor.$('#regionFilter').innerHTML = '<option value="all">Toutes</option>' + regs.map(r=>`<option value="${r}">${r}</option>`).join('');
+  ['#placeSearch','#categoryFilter','#regionFilter'].forEach(sel => Zarlor.$(sel).addEventListener(sel.includes('Search')?'input':'change', () => renderPlaces(filterPlaces())));
+}
+
+function filterPlaces(){
+  const q = Zarlor.$('#placeSearch').value.toLowerCase();
+  const cat = Zarlor.$('#categoryFilter').value;
+  const reg = Zarlor.$('#regionFilter').value;
+  return (Zarlor.data.places || []).filter(p => {
+    const matchQ = JSON.stringify(p).toLowerCase().includes(q);
+    return matchQ && (cat==='all'||p.categorie===cat) && (reg==='all'||p.region===reg);
   });
+}
 
-  // Active la molette au clic (meilleure UX mobile/desktop)
-  map.on("click", () => map.scrollWheelZoom.enable());
+function renderPlaces(places){
+  renderMarkers(places);
+  const favorites = Zarlor.storage.get('zarlor_favorites', []);
+  Zarlor.$('#placesList').innerHTML = places.map(p => `<article class="place-item" data-place-id="${p.id}">
+    <h4>${p.nom}</h4><p>${p.commune} • ${p.region}</p>
+    <div class="badges">${Zarlor.badge(p.categorie,'green')}${Zarlor.badge(p.niveau_famille,'blue')}${p.a_verifier ? Zarlor.badge('À vérifier','red') : ''}</div>
+    <button class="btn btn-ghost" data-place-detail="${p.id}">Voir la fiche</button>
+    <button class="btn btn-ghost" data-place-fav="${p.id}">${favorites.includes(p.id) ? 'Retirer favori' : 'Ajouter favori'}</button>
+  </article>`).join('') || '<p>Aucun lieu pour ces filtres.</p>';
+}
 
-  render();
+function renderMarkers(places){
+  if(!zarlorMap) return;
+  placeMarkers.forEach(marker => marker.remove());
+  placeMarkers = places.map(place => {
+    const marker = L.marker([place.latitude, place.longitude]).addTo(zarlorMap);
+    marker.bindPopup(`<strong>${place.nom}</strong><br>${place.categorie}<br><button onclick="openPlaceDetail('${place.id}')">Voir la fiche</button>`);
+    return marker;
+  });
+  if(placeMarkers.length){
+    const group = L.featureGroup(placeMarkers);
+    zarlorMap.fitBounds(group.getBounds().pad(.2));
+  }
+}
+
+function placeDetailHTML(place){
+  return `<h2 id="modalTitle">${place.nom}</h2>
+    <div class="detail-hero">${Zarlor.img(place.image || './assets/images/placeholder-place.svg', place.nom)}</div>
+    <div class="badges">${Zarlor.badge(place.categorie,'green')}${Zarlor.badge(place.region,'blue')}${Zarlor.badge(place.niveau_famille,'')}${place.a_verifier ? Zarlor.badge('À vérifier','red') : ''}</div>
+    <p class="lead">${place.courte_description || ''}</p>
+    <div class="detail-grid">
+      <span>Commune : ${place.commune}</span><span>Durée : ${place.duree_conseillee || 'À renseigner'}</span>
+      <span>Parking : ${place.parking ? 'oui' : 'non'}</span><span>Toilettes : ${place.toilettes ? 'oui' : 'non'}</span>
+      <span>Ombre : ${place.ombre ? 'oui' : 'non'}</span><span>Poussette : ${place.poussette ? 'oui' : 'non'}</span>
+    </div>
+    <h3>Anecdote</h3><p>${place.anecdote || 'À compléter.'}</p>
+    <h3>Conseil famille</h3><p>${place.conseil_famille || 'À compléter.'}</p>
+    <p class="small"><strong>Source :</strong> ${place.source || 'À compléter'}</p>
+    <div class="hero-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="${place.google_maps || 'https://www.google.com/maps'}">Ouvrir dans Google Maps</a><button class="btn btn-ghost" data-place-fav="${place.id}">Ajouter / retirer favori</button></div>`;
+}
+
+window.openPlaceDetail = function(id){
+  const place = Zarlor.data.places?.find(p => p.id === id);
+  if(place) Zarlor.openModal(placeDetailHTML(place));
+}
+
+function toggleFavorite(id){
+  const favorites = Zarlor.storage.get('zarlor_favorites', []);
+  const next = favorites.includes(id) ? favorites.filter(x => x !== id) : [...favorites, id];
+  Zarlor.storage.set('zarlor_favorites', next);
+  updateFavoriteCount();
+  renderPlaces(filterPlaces());
+}
+function updateFavoriteCount(){
+  Zarlor.$('#favoriteCount').textContent = Zarlor.storage.get('zarlor_favorites', []).length;
+}
+
+document.addEventListener('click', (event) => {
+  const detail = event.target.closest('[data-place-detail]');
+  const fav = event.target.closest('[data-place-fav]');
+  if(detail) openPlaceDetail(detail.dataset.placeDetail);
+  if(fav) toggleFavorite(fav.dataset.placeFav);
 });
+
+document.addEventListener('DOMContentLoaded', initMap);

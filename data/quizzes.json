@@ -1,62 +1,85 @@
 [
   {
-    "id": "q1",
-    "question": "Que veut dire « marmay » en créole réunionnais ?",
-    "type": "creole_vers_fr",
+    "id": "q-001",
+    "question": "Que veut dire “kaz” ?",
+    "type": "traduction créole vers français",
     "image": "",
     "audio": "",
-    "options": ["Marmite", "Enfant(s)", "Marché", "Matin"],
-    "bonne_reponse": "Enfant(s)",
-    "explication": "« Marmay » désigne un enfant ou les enfants.",
+    "options": [
+      "Maison",
+      "Montagne",
+      "Poisson",
+      "Chemin"
+    ],
+    "bonne_reponse": "Maison",
+    "explication": "“Kaz” désigne la maison ou le foyer.",
+    "niveau": "facile",
+    "categorie": "créole"
+  },
+  {
+    "id": "q-002",
+    "question": "Quel mot créole peut désigner les enfants ?",
+    "type": "français vers créole",
+    "image": "",
+    "audio": "",
+    "options": [
+      "Marmay",
+      "Marmit",
+      "Zarlor",
+      "Kari"
+    ],
+    "bonne_reponse": "Marmay",
+    "explication": "“Marmay” est souvent utilisé pour parler des enfants.",
     "niveau": "facile",
     "categorie": "famille"
   },
   {
-    "id": "q2",
-    "question": "Comment dit-on « maison » en créole ?",
-    "type": "fr_vers_creole",
-    "image": "",
+    "id": "q-003",
+    "question": "Kosa mi lé ? On m’utilise souvent pour préparer un cari.",
+    "type": "devinette objet lontan",
+    "image": "assets/images/placeholder-recipe.svg",
     "audio": "",
-    "options": ["Kaz", "Kari", "Kart", "Kabar"],
-    "bonne_reponse": "Kaz",
-    "explication": "« Kaz » signifie maison ; la case créole désigne aussi l'habitat traditionnel.",
+    "options": [
+      "Marmite",
+      "Panier",
+      "Carte",
+      "Pilon"
+    ],
+    "bonne_reponse": "Marmite",
+    "explication": "La marmite est associée aux plats mijotés et aux repas partagés.",
     "niveau": "facile",
-    "categorie": "famille"
+    "categorie": "cuisine"
   },
   {
-    "id": "q3",
-    "question": "Le mot « zarlor » signifie « trésor ».",
-    "type": "vrai_faux",
+    "id": "q-004",
+    "question": "Vrai ou faux : un lieu marqué “à vérifier” dans cette V1 doit être contrôlé avant publication officielle.",
+    "type": "vrai/faux",
     "image": "",
     "audio": "",
-    "options": ["Vrai", "Faux"],
+    "options": [
+      "Vrai",
+      "Faux"
+    ],
     "bonne_reponse": "Vrai",
-    "explication": "Exact : « zarlor » veut bien dire trésor.",
+    "explication": "Les données exemples servent de base de test. Il faut les remplacer ou les vérifier.",
     "niveau": "facile",
-    "categorie": "quotidien"
+    "categorie": "site"
   },
   {
-    "id": "q4",
-    "question": "En graphie KWZ, comment écrit-on le mot que le 77 note « pié » ?",
-    "type": "choix_multiple",
+    "id": "q-005",
+    "question": "Quel module sert à découvrir des lieux sur une carte ?",
+    "type": "choix multiple",
     "image": "",
     "audio": "",
-    "options": ["pyé", "pier", "pied", "piè"],
-    "bonne_reponse": "pyé",
-    "explication": "La graphie KWZ (1983) étend l'usage de w et y : « pié » devient « pyé ».",
-    "niveau": "avance",
-    "categorie": "langue"
-  },
-  {
-    "id": "q5",
-    "question": "Devinette : objet lontan, en métal, on cuisinait le cari dessus au feu de bois. Kosa mi lé ?",
-    "type": "devinette",
-    "image": "assets/images/placeholder-article.svg",
-    "audio": "",
-    "options": ["La marmit", "La pilon", "Le féblan", "La rape"],
-    "bonne_reponse": "La marmit",
-    "explication": "La marmite (« marmit ») servait à mijoter le cari sur le feu de bois.",
-    "niveau": "moyen",
-    "categorie": "lontan"
+    "options": [
+      "Carte péi",
+      "Dann marmit",
+      "Ti boutique",
+      "Souvenir lontan"
+    ],
+    "bonne_reponse": "Carte péi",
+    "explication": "La Carte péi centralise les lieux à découvrir en famille.",
+    "niveau": "facile",
+    "categorie": "application"
   }
 ]

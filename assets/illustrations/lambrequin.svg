@@ -1,5 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0 0 H1200 V14
-    q-25 0 -25 16 q0 16 -25 16 q-25 0 -25 -16 q0 -16 -25 -16 q-25 0 -25 16 q0 16 -25 16 q-25 0 -25 -16 q0 -16 -25 -16
-    H0 Z" fill="currentColor" transform="translate(0)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0H1200V36C1160 36 1160 80 1120 80C1080 80 1080 36 1040 36C1000 36 1000 80 960 80C920 80 920 36 880 36C840 36 840 80 800 80C760 80 760 36 720 36C680 36 680 80 640 80C600 80 600 36 560 36C520 36 520 80 480 80C440 80 440 36 400 36C360 36 360 80 320 80C280 80 280 36 240 36C200 36 200 80 160 80C120 80 120 36 80 36C40 36 40 80 0 80Z" fill="currentColor"/>
 </svg>

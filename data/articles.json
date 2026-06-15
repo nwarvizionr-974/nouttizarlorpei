@@ -1,26 +1,50 @@
 [
   {
-    "id": "la-marmit",
-    "titre": "La marmite au feu de bois",
+    "id": "a-001",
+    "titre": "Le panier lontan",
     "categorie": "objet lontan",
-    "date": "2025-01-01",
+    "date": "2026-01-01",
     "image": "assets/images/placeholder-article.svg",
-    "resume": "Avant le gaz, le cari mijotait des heures sur le feu de bois, dans la grande marmite en fonte.",
-    "contenu": "La cuisine au feu de bois faisait partie du quotidien. La marmite noircie passait de génération en génération. Le goût fumé du cari, on ne le retrouve pas tout à fait sur une cuisinière moderne. Ce souvenir illustre un mode de vie ; les détails précis sont à compléter avec des témoignages de famille.",
-    "source": "Témoignage à recueillir",
-    "tags": ["cuisine", "objet", "feu de bois"],
+    "resume": "Un modèle d’article pour raconter un objet du quotidien et sa place dans la mémoire familiale.",
+    "contenu_court": "Le panier peut devenir un point de départ pour parler de marché, de jardin, de cuisine et de transmission. Remplace ce texte par un contenu sourcé ou un témoignage validé.",
+    "source": "À compléter",
+    "tags": [
+      "objet",
+      "mémoire",
+      "famille"
+    ],
     "a_verifier": true
   },
   {
-    "id": "lecole-lontan",
-    "titre": "L'école lontan",
+    "id": "a-002",
+    "titre": "Souvenir d’école",
     "categorie": "école",
-    "date": "2025-01-02",
+    "date": "2026-01-01",
     "image": "assets/images/placeholder-article.svg",
-    "resume": "Le plumier, l'ardoise, les billes dans la cour : petites scènes d'une école d'autrefois.",
-    "contenu": "Beaucoup se souviennent du chemin de l'école pieds nus, des jeux de billes et des récréations à l'ombre du grand arbre. Article d'exemple : à enrichir avec des souvenirs réels et leurs sources avant publication.",
-    "source": "Souvenirs à recueillir",
-    "tags": ["école", "enfance", "memoire"],
+    "resume": "Une fiche éditoriale pour collecter des souvenirs d’école, de cour, de jeux et de mots créoles.",
+    "contenu_court": "Ajoute ici un témoignage ou une anecdote familiale. Les souvenirs envoyés par la communauté doivent être relus avant publication.",
+    "source": "Témoignage à collecter",
+    "tags": [
+      "école",
+      "marmay",
+      "souvenir"
+    ],
+    "a_verifier": true
+  },
+  {
+    "id": "a-003",
+    "titre": "Cuisine au feu de bois",
+    "categorie": "cuisine",
+    "date": "2026-01-01",
+    "image": "assets/images/placeholder-article.svg",
+    "resume": "Un exemple de sujet fort pour relier cuisine, mémoire, gestes et famille.",
+    "contenu_court": "Ce contenu doit être enrichi avec des informations vérifiées, photos et témoignages. Il sert ici de modèle de mise en page.",
+    "source": "À compléter",
+    "tags": [
+      "cuisine",
+      "lontan",
+      "transmission"
+    ],
     "a_verifier": true
   }
 ]

@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Recette péi">
-  <rect width="640" height="420" fill="#F5ECD8"/>
-  <ellipse cx="320" cy="240" rx="160" ry="150" fill="#fff"/>
-  <ellipse cx="320" cy="240" rx="120" ry="112" fill="#B0843A"/>
-  <ellipse cx="320" cy="232" rx="118" ry="104" fill="#C9A24B"/>
-  <circle cx="285" cy="215" r="14" fill="#241E16"/><circle cx="345" cy="230" r="16" fill="#6E6149"/>
-  <circle cx="312" cy="262" r="12" fill="#B0843A"/><circle cx="356" cy="200" r="10" fill="#241E16"/>
-  <path d="M170 240 a150 150 0 0 0 300 0" fill="none" stroke="#235A45" stroke-width="10" stroke-linecap="round"/>
-  <text x="320" y="402" font-family="system-ui,sans-serif" font-size="22" fill="#241E16" text-anchor="middle">Dann marmit</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Recette péi">
+  <rect width="1200" height="800" fill="#FFF7E6"/>
+  <path d="M0 540 C190 470 300 620 500 540 C760 430 830 610 1200 505 L1200 800 L0 800Z" fill="#E8872E" opacity=".32"/>
+  <circle cx="950" cy="170" r="150" fill="#3E8E5B" opacity=".25"/>
+  <circle cx="260" cy="220" r="110" fill="#D94A38" opacity=".22"/>
+  <text x="600" y="380" text-anchor="middle" fill="#2B2118" font-family="Arial, sans-serif" font-size="64" font-weight="700">Recette péi</text>
+  <text x="600" y="450" text-anchor="middle" fill="#7A4E2D" font-family="Arial, sans-serif" font-size="28">Remplace cette image dans /assets/images</text>
 </svg>
