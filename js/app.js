@@ -175,7 +175,7 @@ ZP.openRecipe = function (r) {
     <button class="modal__close" aria-label="Fermer" onclick="ZP.closeModal()">×</button>
     <img src="${ZP.esc(r.image)}" alt="" onerror="ZP.imgFallback(this,'recipe')">
     <div class="modal__inner">
-      <span class="meta" style="color:var(--sun-2);font-weight:700">${ZP.esc(r.categorie)} · ${ZP.esc(r.temps)} · ${ZP.esc(r.portions)} parts</span>
+      <span class="meta" style="color:var(--gold);font-weight:700">${ZP.esc(r.categorie)} · ${ZP.esc(r.temps)} · ${ZP.esc(r.portions)} parts</span>
       <h2>${ZP.esc(r.titre)}</h2>
       <p>${ZP.esc(r.introduction)}</p>
       <h3>Ingrédients</h3>
@@ -211,7 +211,7 @@ ZP.openArticle = function (a) {
     <button class="modal__close" aria-label="Fermer" onclick="ZP.closeModal()">×</button>
     <img src="${ZP.esc(a.image)}" alt="" onerror="ZP.imgFallback(this,'article')">
     <div class="modal__inner">
-      <span class="meta" style="color:var(--sun-2);font-weight:700">${ZP.esc(a.categorie)}</span>
+      <span class="meta" style="color:var(--gold);font-weight:700">${ZP.esc(a.categorie)}</span>
       <h2>${ZP.esc(a.titre)}</h2>
       <p>${ZP.esc(a.contenu)}</p>
       ${a.a_verifier ? `<p class="tag tag--verif">Contenu à vérifier avant diffusion</p>` : ""}

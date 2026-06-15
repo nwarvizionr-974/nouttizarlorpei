@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* --- Marqueur personnalisé aux couleurs du site --- */
   const icon = L.divIcon({
     className: "zp-marker",
-    html: '<span style="display:block;width:22px;height:22px;border-radius:50% 50% 50% 0;background:linear-gradient(135deg,#F9CE0F,#ED8710);transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 3px 6px rgba(0,0,0,.3)"></span>',
+    html: '<span style="display:block;width:22px;height:22px;border-radius:50% 50% 50% 0;background:linear-gradient(135deg,#C9A24B,#B0843A);transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 3px 6px rgba(0,0,0,.3)"></span>',
     iconSize: [22, 22], iconAnchor: [11, 22], popupAnchor: [0, -20]
   });
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       <button class="modal__close" aria-label="Fermer" onclick="ZP.closeModal()">×</button>
       <img src="${ZP.esc(p.image)}" alt="" onerror="ZP.imgFallback(this,'place')">
       <div class="modal__inner">
-        <span class="meta" style="color:var(--sun-2);font-weight:700">${ZP.esc(p.categorie)} · ${ZP.esc(p.commune)} (${ZP.esc(p.region)})</span>
+        <span class="meta" style="color:var(--gold);font-weight:700">${ZP.esc(p.categorie)} · ${ZP.esc(p.commune)} (${ZP.esc(p.region)})</span>
         <h2>${ZP.esc(p.nom)}</h2>
         <p>${ZP.esc(p.description)}</p>
         <p>${facts.map(f => `<span class="tag">${ZP.esc(f)}</span>`).join(" ")}</p>

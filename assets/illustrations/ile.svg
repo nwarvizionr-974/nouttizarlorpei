@@ -1,33 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 420" role="img" aria-label="Carte stylisée de La Réunion avec le volcan">
   <defs>
     <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6FB45A"/><stop offset="1" stop-color="#4E8A3E"/>
+      <stop offset="0" stop-color="#235A45"/><stop offset="1" stop-color="#1F4A3A"/>
     </linearGradient>
     <radialGradient id="sun" cx="50%" cy="45%" r="60%">
-      <stop offset="0" stop-color="#F9CE0F"/><stop offset="1" stop-color="#ED8710"/>
+      <stop offset="0" stop-color="#D9B662"/><stop offset="1" stop-color="#B0843A"/>
     </radialGradient>
-    <filter id="soft"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1f5e20" flood-opacity="0.18"/></filter>
+    <filter id="soft"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#143329" flood-opacity="0.22"/></filter>
   </defs>
-  <!-- sun behind island -->
+  <!-- soleil doré, rayons fins -->
   <g>
-    <circle cx="330" cy="92" r="46" fill="url(#sun)"/>
-    <g stroke="#ED8710" stroke-width="5" stroke-linecap="round">
-      <line x1="330" y1="18" x2="330" y2="34"/><line x1="404" y1="92" x2="388" y2="92"/>
-      <line x1="383" y1="40" x2="372" y2="51"/><line x1="277" y1="40" x2="288" y2="51"/>
+    <circle cx="330" cy="92" r="44" fill="url(#sun)"/>
+    <g stroke="#B0843A" stroke-width="2.4" stroke-linecap="round">
+      <line x1="330" y1="14" x2="330" y2="32"/><line x1="408" y1="92" x2="390" y2="92"/>
+      <line x1="386" y1="36" x2="373" y2="49"/><line x1="274" y1="36" x2="287" y2="49"/>
+      <line x1="386" y1="148" x2="373" y2="135"/><line x1="274" y1="148" x2="287" y2="135"/>
     </g>
   </g>
-  <!-- island organic silhouette (stylised Réunion) -->
+  <!-- silhouette de l'île (Réunion stylisée) -->
   <path filter="url(#soft)" fill="url(#land)" d="M150 360
     C90 350 40 300 60 240 C72 205 60 175 92 150 C120 128 150 96 205 92
     C262 88 300 70 348 92 C404 118 420 175 405 230 C394 272 410 305 372 338
     C336 369 300 360 250 372 C210 381 188 366 150 360 Z"/>
-  <!-- inner relief lines -->
-  <path d="M120 250 C170 220 250 210 320 240" fill="none" stroke="#3f7634" stroke-width="6" stroke-linecap="round" opacity=".5"/>
-  <path d="M150 300 C210 280 280 285 340 300" fill="none" stroke="#3f7634" stroke-width="6" stroke-linecap="round" opacity=".4"/>
-  <!-- Piton volcano marker -->
-  <g transform="translate(300,250)">
-    <polygon points="-34,40 -6,-14 0,-26 8,-12 34,40" fill="#7A4E35"/>
-    <polygon points="-7,-15 0,-27 7,-13" fill="#ED8710"/>
-    <circle cx="0" cy="-30" r="6" fill="#F9CE0F"/>
+  <!-- reliefs en trait doré fin -->
+  <path d="M110 240 C170 206 250 198 330 232" fill="none" stroke="#C9A24B" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+  <path d="M132 286 C200 262 282 268 350 290" fill="none" stroke="#C9A24B" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  <path d="M160 330 C220 314 286 318 336 332" fill="none" stroke="#C9A24B" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+  <!-- Piton / volcan -->
+  <g transform="translate(300,248)">
+    <polygon points="-36,42 -6,-16 0,-28 8,-14 36,42" fill="#241E16"/>
+    <polygon points="-7,-17 0,-29 7,-15" fill="#B0843A"/>
+    <circle cx="0" cy="-32" r="5.5" fill="#D9B662"/>
   </g>
 </svg>
