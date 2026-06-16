@@ -312,3 +312,65 @@ p{margin:0 0 1em}
   .section,.case{padding:1rem 0}
   .ecard,.mot-card,.place-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
 }
+
+/* =====================================================================
+   19. VARIANTE ÉDITORIALE CHAUDE  (réf. Wanderia · Cabo Tierra · Activland)
+   Palette sourde & naturelle · sérif italique · texture papier · soleil.
+   ===================================================================== */
+:root{
+  --turq:#2C8C81; --sky:#6E97AE; --mango:#DDA231;
+  --coral:#C2613B; --lime:#8A9A3C; --lilac:#46603A;   /* "lilac" -> vert forêt */
+  --cream:#F3E9D2; --white:#FFFDF7; --ink:#2B2620;
+  --muted:#7C6F5C; --line:#E4D7BC;
+  --font-hand:"Fraunces", Georgia, serif;   /* accent sérif italique (remplace le manuscrit) */
+  --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+body{background-color:var(--cream);background-image:var(--paper)}
+
+/* Couleurs de cases — version sourde */
+.case--turquoise{--band:#2C8C81;--accent:#206A61;--on:var(--white)}
+.case--sky{--band:#6E97AE;--accent:#3E6B85;--on:var(--white)}
+.case--mango{--band:#DDA231;--accent:#A9701A;--on:var(--ink)}
+.case--coral{--band:#C2613B;--accent:#9E4A2A;--on:var(--white)}
+.case--lime{--band:#8A9A3C;--accent:#5F6E26;--on:var(--ink)}
+.case--lilac{--band:#46603A;--accent:#2F4526;--on:var(--white)}
+.u-carte{--accent:#2C8C81}.u-mot{--accent:#C2613B}.u-quiz{--accent:#46603A}
+.u-marmit{--accent:#8A9A3C}.u-souvenir{--accent:#6E97AE}.u-boutique{--accent:#DDA231}
+
+/* Grain kraft subtil sur chaque façade */
+.case{overflow:hidden}
+.case::after{content:"";position:absolute;inset:0;background-image:var(--paper);
+  opacity:.5;mix-blend-mode:multiply;pointer-events:none;z-index:0}
+.case>.wrap{position:relative;z-index:1}
+.case>.eave{z-index:3}
+
+/* Accents sérif italique (éditorial chaud) */
+.eyebrow{font-family:var(--font-hand);font-style:italic;font-weight:500;font-size:1.18rem;letter-spacing:0;opacity:.95}
+.hero__sub,.mot-card .ex,.ecard .meta,.footer-promise,.hero__title em,.ecard h3,.place-card h3{font-style:italic}
+.hero__title em{font-family:var(--font-hand);font-weight:600;color:var(--coral)}
+.hero__title em::after{background:var(--coral)}
+.hero__sub{font-family:var(--font-hand);font-weight:500;color:var(--turq)}
+.ecard h3,.place-card h3{font-family:var(--font-hand);font-weight:600}
+.footer-promise{font-family:var(--font-hand);color:#E3B765}
+
+/* HERO — ciel chaud + soleil rayonnant */
+.hero{background:linear-gradient(180deg,#E8EFE2 0%,#F6EED9 60%,var(--cream) 100%)}
+.hero__sun{background:url("assets/illustrations/sun.svg") center/contain no-repeat;
+  box-shadow:none;width:98px;height:98px;top:32px;border-radius:0}
+.hero__kicker{color:var(--turq)}
+.hero .btn--primary{background:var(--coral)}
+.hero .btn--primary:hover{background:#d06d44}
+
+/* CARTES-LIEUX façon Wanderia : photo + panneau couleur + nom sérif + flèche */
+.place-card{border-top:0;border-radius:16px}
+.place-card img{height:172px}
+.place-card__body{background:var(--mango);color:var(--ink);padding:1rem 1.15rem 1.15rem}
+.place-card h3{color:var(--ink);font-size:1.4rem;margin:0 0 .1em}
+.place-card .meta{color:#6a5526}
+.place-card .tag{background:rgba(255,253,247,.55);border-color:rgba(0,0,0,.08);color:var(--ink)}
+.place-card .tag--verif{background:#fff4d4}
+.place-card .btn::after,.ecard .btn::after{content:" \2197";font-weight:700}
+
+/* Cartes éditoriales — nom sérif italique */
+.ecard h3{font-size:1.32rem}
+.ecard .meta{font-size:1.12rem}

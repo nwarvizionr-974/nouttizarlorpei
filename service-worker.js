@@ -4,7 +4,7 @@
    "réseau d'abord" pour les données JSON (toujours à jour si en ligne).
    ⚠️ Incrémentez CACHE_VERSION à chaque mise à jour pour forcer le rafraîchissement.
    ========================================================================= */
-const CACHE_VERSION = "zarlor-v4";
+const CACHE_VERSION = "zarlor-v5";
 
 /* Chemins RELATIFS (important pour fonctionner dans un sous-dossier GitHub Pages) */
 const CORE_ASSETS = [
@@ -29,6 +29,7 @@ const CORE_ASSETS = [
   "assets/icons/icon-512.png",
   "assets/illustrations/lambrequin-frieze.svg",
   "assets/illustrations/village.svg",
+  "assets/illustrations/sun.svg",
   "assets/images/placeholder-place.svg",
   "assets/images/placeholder-recipe.svg",
   "assets/images/placeholder-article.svg",
