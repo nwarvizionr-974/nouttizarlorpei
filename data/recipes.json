@@ -7,7 +7,7 @@
     "temps": "45 min",
     "portions": 4,
     "image": "assets/images/rougail-saucisse.jpg",
-    "introduction": "Le plat du dimanche par excellence : des saucisses fumées mijotées dans une sauce tomate parfumée.",
+    "introduction": "Le plat du réunionnais par excellence : des saucisses  mijotées dans une sauce tomate parfumée.",
     "ingredients": [
       "500 g de saucisses fumées péi",
       "3 tomates bien mûres",
@@ -29,7 +29,7 @@
   },
   {
     "id": "gateau-patate",
-    "titre": "Gâteau patate douce",
+    "titre": "Gâteau patate",
     "categorie": "dessert",
     "difficulte": "moyen",
     "temps": "1 h 15",
