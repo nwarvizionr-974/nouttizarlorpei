@@ -1,1 +1,120 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Admin JSON local – Nout Ti Zarlor Péi</title><link rel="stylesheet" href="./css/styles.css"><meta name="robots" content="noindex"></head><body><header class="site-header"><nav class="nav container"><a class="brand" href="./index.html"><span><strong>Nout Ti Zarlor Péi</strong><small>Admin JSON local</small></span></a><a class="btn btn-primary" href="./index.html">Retour au site</a></nav></header><main class="section"><div class="container narrow"><div class="section-head"><p class="eyebrow">Admin local</p><h1>Générateur de blocs JSON</h1><p>Cette page ne modifie pas le site directement. Elle génère un bloc JSON à copier dans le fichier correspondant.</p></div><div class="card-highlight"><label>Type de contenu <select id="adminType"><option value="place">Lieu</option><option value="word">Mot créole</option><option value="recipe">Recette</option><option value="quiz">Quiz</option></select></label><div id="adminForm" class="admin-form"></div><button class="btn btn-primary" id="generateJsonBtn">Générer le JSON</button><button class="btn btn-ghost" id="copyJsonBtn">Copier</button><pre id="jsonOutput" style="white-space:pre-wrap;background:#2B2118;color:#FFF7E6;padding:1rem;border-radius:20px;overflow:auto"></pre></div></div></main><script src="./js/admin-local.js" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin local — Générateur JSON · Nout Ti Zarlor Péi</title>
+  <link rel="icon" href="assets/icons/favicon-64.png" sizes="64x64" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .admin{max-width:760px;margin:2rem auto;padding:0 1.2rem}
+    .admin h2{margin-top:2rem}
+    .admin label{display:block;font-weight:600;margin:.7rem 0 .2rem;font-size:.92rem}
+    .admin input,.admin select,.admin textarea{width:100%;padding:.6rem .8rem;border:2px solid var(--line);
+      border-radius:12px;font-family:var(--font-ui);font-size:.95rem}
+    .admin textarea{min-height:80px}
+    .admin fieldset{border:1px solid var(--line);border-radius:var(--r);padding:1.2rem;margin-bottom:1rem}
+    .admin legend{font-family:var(--font-accent);font-weight:700;padding:0 .5rem;color:var(--gold)}
+    .out{background:var(--ink);color:#eadfca;border-radius:var(--r);padding:1rem;white-space:pre-wrap;
+      font-family:ui-monospace,monospace;font-size:.82rem;margin-top:1rem;max-height:320px;overflow:auto}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+    .note{background:var(--gold-wash);padding:1rem;border-radius:var(--r);color:var(--ink)}
+    @media(max-width:560px){.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html"><img class="brand__mark" src="assets/icons/icon-192.png" alt="" width="40" height="40"><span class="brand__name">Admin local</span></a>
+      <a class="btn btn--ghost" href="index.html" style="margin-left:auto">← Retour au site</a>
+    </div>
+  </header>
+
+  <div class="admin">
+    <h1>Générateur de contenu (local)</h1>
+    <p class="note">Cette page ne modifie pas le site directement (GitHub Pages est statique). Elle vous aide à <strong>générer un bloc JSON</strong> propre, que vous <strong>copiez ensuite dans le fichier correspondant</strong> du dossier <code>/data</code>. Pensez à coller le bloc <em>à l'intérieur</em> des crochets <code>[ ]</code>, en le séparant du précédent par une virgule.</p>
+
+    <!-- LIEU -->
+    <h2>Ajouter un lieu → <code>data/places.json</code></h2>
+    <fieldset>
+      <legend>Lieu</legend>
+      <label>Identifiant (sans espace)</label><input data-f="id" placeholder="cap-noir" />
+      <div class="row">
+        <div><label>Nom</label><input data-f="nom" /></div>
+        <div><label>Commune</label><input data-f="commune" /></div>
+      </div>
+      <div class="row">
+        <div><label>Région</label><select data-f="region"><option>Nord</option><option>Sud</option><option>Est</option><option>Ouest</option><option>Hauts</option></select></div>
+        <div><label>Catégorie</label><select data-f="categorie"><option>pique-nique</option><option>bassin</option><option>plage</option><option>point de vue</option><option>patrimoine</option><option>marché</option><option>balade</option><option>jardin</option><option>famille</option></select></div>
+      </div>
+      <div class="row">
+        <div><label>Latitude</label><input data-f="latitude" type="number" step="0.0001" placeholder="-21.1151" /></div>
+        <div><label>Longitude</label><input data-f="longitude" type="number" step="0.0001" placeholder="55.5364" /></div>
+      </div>
+      <div class="row">
+        <div><label>Niveau famille</label><select data-f="niveau_famille"><option>facile</option><option>moyen</option><option>prudent</option></select></div>
+        <div><label>Durée conseillée</label><input data-f="duree_conseillee" placeholder="Demi-journée" /></div>
+      </div>
+      <label>Description</label><textarea data-f="description"></textarea>
+      <label>Conseil famille</label><textarea data-f="conseil_famille"></textarea>
+      <button class="btn btn--primary" data-gen="place">Générer le JSON du lieu</button>
+      <pre class="out" id="out-place">Le JSON apparaîtra ici…</pre>
+      <button class="btn btn--soft" data-copy="out-place">Copier</button>
+    </fieldset>
+
+    <!-- MOT CRÉOLE -->
+    <h2>Ajouter un mot créole → <code>data/creole.json</code></h2>
+    <fieldset>
+      <legend>Mot créole</legend>
+      <label>Identifiant</label><input data-f="id" placeholder="dofé" />
+      <div class="row">
+        <div><label>Mot (graphie principale)</label><input data-f="mot" /></div>
+        <div><label>Traduction FR</label><input data-f="traduction_fr" /></div>
+      </div>
+      <div class="row">
+        <div><label>Type</label><select data-f="type"><option>mot</option><option>expression</option><option>proverbe</option></select></div>
+        <div><label>Catégorie</label><select data-f="categorie"><option>famille</option><option>cuisine</option><option>nature</option><option>quotidien</option><option>emotion</option><option>lontan</option></select></div>
+      </div>
+      <label>Phrase exemple</label><input data-f="phrase_exemple" />
+      <label>Explication</label><textarea data-f="explication"></textarea>
+      <div class="row">
+        <div><label>Variante 77</label><input data-f="variante_77" /></div>
+        <div><label>Variante KWZ</label><input data-f="variante_kwz" /></div>
+      </div>
+      <div class="row">
+        <div><label>Variante Tangol</label><input data-f="variante_tangol" /></div>
+        <div><label>Niveau</label><select data-f="niveau"><option>facile</option><option>moyen</option><option>avance</option></select></div>
+      </div>
+      <button class="btn btn--primary" data-gen="creole">Générer le JSON du mot</button>
+      <pre class="out" id="out-creole">Le JSON apparaîtra ici…</pre>
+      <button class="btn btn--soft" data-copy="out-creole">Copier</button>
+    </fieldset>
+
+    <!-- RECETTE -->
+    <h2>Ajouter une recette → <code>data/recipes.json</code></h2>
+    <fieldset>
+      <legend>Recette</legend>
+      <label>Identifiant</label><input data-f="id" placeholder="bouchon-vapeur" />
+      <div class="row">
+        <div><label>Titre</label><input data-f="titre" /></div>
+        <div><label>Catégorie</label><select data-f="categorie"><option>plat</option><option>dessert</option><option>boisson</option></select></div>
+      </div>
+      <div class="row">
+        <div><label>Difficulté</label><select data-f="difficulte"><option>facile</option><option>moyen</option><option>difficile</option></select></div>
+        <div><label>Temps</label><input data-f="temps" placeholder="45 min" /></div>
+      </div>
+      <label>Portions</label><input data-f="portions" type="number" value="4" />
+      <label>Introduction</label><textarea data-f="introduction"></textarea>
+      <label>Ingrédients (un par ligne)</label><textarea data-f="ingredients"></textarea>
+      <label>Étapes (une par ligne)</label><textarea data-f="etapes"></textarea>
+      <label>Astuce</label><input data-f="astuce" />
+      <button class="btn btn--primary" data-gen="recipe">Générer le JSON de la recette</button>
+      <pre class="out" id="out-recipe">Le JSON apparaîtra ici…</pre>
+      <button class="btn btn--soft" data-copy="out-recipe">Copier</button>
+    </fieldset>
+  </div>
+
+  <script src="js/admin-local.js"></script>
+</body>
+</html>

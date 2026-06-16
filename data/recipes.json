@@ -1,85 +1,62 @@
 [
   {
-    "id": "r-001",
-    "titre": "Cari péi à compléter",
+    "id": "rougail-saucisse",
+    "titre": "Rougail saucisse",
     "categorie": "plat",
-    "difficulte": "moyen",
+    "difficulte": "facile",
     "temps": "45 min",
-    "portions": "4 personnes",
+    "portions": 4,
     "image": "assets/images/placeholder-recipe.svg",
-    "introduction": "Une fiche modèle pour présenter une recette familiale. Remplace le contenu par une recette vérifiée.",
+    "introduction": "Le plat du dimanche par excellence : des saucisses fumées mijotées dans une sauce tomate parfumée.",
     "ingredients": [
-      "Ingrédient 1 à renseigner",
-      "Ingrédient 2 à renseigner",
-      "Épices à renseigner"
+      "500 g de saucisses fumées péi",
+      "3 tomates bien mûres",
+      "2 oignons",
+      "3 gousses d'ail",
+      "1 morceau de gingembre",
+      "Thym, curcuma (safran péi), sel",
+      "Un peu d'huile"
     ],
     "etapes": [
-      "Préparer les ingrédients.",
-      "Faire revenir selon la recette familiale.",
-      "Laisser mijoter et servir chaud."
+      "Faire bouillir les saucisses coupées en morceaux pour les dessaler, puis égoutter.",
+      "Faire revenir les oignons émincés dans l'huile, ajouter ail et gingembre pilés.",
+      "Ajouter les saucisses et laisser dorer.",
+      "Ajouter les tomates, le curcuma, le thym, puis laisser mijoter 20 min.",
+      "Servir avec du riz et des grains (lentilles ou haricots)."
     ],
-    "astuce": "Ajoute ici une astuce de famille.",
-    "souvenir": "Ajoute ici un souvenir autour du repas.",
-    "tags": [
-      "cari",
-      "famille"
-    ],
-    "a_verifier": true
+    "astuce": "Un piment écrasé à part, en rougail, pour ceux qui aiment le feu.",
+    "souvenir": "L'odeur du rougail saucisse un dimanche midi, c'est toute une enfance péi.",
+    "tags": ["plat", "dimanche", "fumé"],
+    "a_verifier": false
   },
   {
-    "id": "r-002",
-    "titre": "Rougail simple à compléter",
-    "categorie": "accompagnement",
-    "difficulte": "facile",
-    "temps": "15 min",
-    "portions": "4 personnes",
-    "image": "assets/images/placeholder-recipe.svg",
-    "introduction": "Une base de fiche pour un rougail. À compléter avec une recette exacte.",
-    "ingredients": [
-      "Tomates ou autre base",
-      "Oignon",
-      "Piment selon goût",
-      "Sel"
-    ],
-    "etapes": [
-      "Laver et préparer les ingrédients.",
-      "Émincer ou écraser selon la tradition familiale.",
-      "Assaisonner et servir frais."
-    ],
-    "astuce": "Prévoir une version sans piment pour les enfants.",
-    "souvenir": "Le rougail accompagne souvent les repas partagés.",
-    "tags": [
-      "rougail",
-      "cuisine"
-    ],
-    "a_verifier": true
-  },
-  {
-    "id": "r-003",
-    "titre": "Gâteau lontan exemple",
+    "id": "gateau-patate",
+    "titre": "Gâteau patate douce",
     "categorie": "dessert",
-    "difficulte": "facile",
-    "temps": "1h",
-    "portions": "6 personnes",
+    "difficulte": "moyen",
+    "temps": "1 h 15",
+    "portions": 8,
     "image": "assets/images/placeholder-recipe.svg",
-    "introduction": "Un modèle pour créer une fiche dessert liée aux souvenirs d’enfance.",
+    "introduction": "Un dessert lontan, fondant et parfumé à la vanille, à base de patate douce.",
     "ingredients": [
-      "Farine",
-      "Sucre",
-      "Œufs",
-      "Parfum au choix"
+      "1 kg de patates douces",
+      "200 g de sucre",
+      "100 g de beurre",
+      "3 œufs",
+      "1 gousse de vanille",
+      "1 zeste de citron vert",
+      "1 pincée de sel"
     ],
     "etapes": [
-      "Mélanger les ingrédients.",
-      "Verser dans un moule.",
-      "Cuire selon la recette exacte."
+      "Cuire les patates douces à l'eau, puis les réduire en purée.",
+      "Mélanger avec le beurre fondu, le sucre, les œufs, la vanille et le zeste.",
+      "Verser dans un moule beurré.",
+      "Cuire au four à 180 °C pendant environ 45 min.",
+      "Laisser refroidir avant de démouler."
     ],
-    "astuce": "Ajouter une note sur la texture attendue.",
-    "souvenir": "À compléter avec une anecdote de famille.",
-    "tags": [
-      "dessert",
-      "lontan"
-    ],
-    "a_verifier": true
+    "astuce": "Encore meilleur le lendemain, bien frais.",
+    "souvenir": "Le gâteau patate qu'on emmenait en pique-nique, enveloppé dans du papier.",
+    "tags": ["dessert", "lontan", "vanille"],
+    "a_verifier": false
   }
 ]

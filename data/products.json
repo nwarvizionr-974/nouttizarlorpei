@@ -1,46 +1,46 @@
 [
   {
-    "id": "p-001",
+    "id": "carnet-famille",
     "nom": "Carnet Ti Famille Zarlor",
-    "type": "PDF",
-    "prix_indicatif": "7 €",
-    "description": "Un carnet imprimable avec sorties, mots créoles, quiz et pages souvenirs.",
-    "statut": "bientôt",
+    "type": "imprimé",
+    "prix_indicatif": "12 €",
+    "description": "Un carnet à remplir en famille : mots créoles, lieux visités, recettes et souvenirs à garder.",
+    "statut": "bientot",
     "image": "assets/images/placeholder-product.svg",
     "bouton_label": "Me prévenir",
-    "lien": "mailto:contact@zarlorpei.re?subject=Carnet%20Ti%20Famille%20Zarlor"
+    "lien": ""
   },
   {
-    "id": "p-002",
-    "nom": "Guide 10 sorties péi en famille",
-    "type": "Guide numérique",
-    "prix_indicatif": "5 €",
-    "description": "Une sélection de lieux simples à découvrir en famille, à enrichir avec des informations vérifiées.",
+    "id": "guide-10-sorties",
+    "nom": "Guide PDF — 10 sorties péi en famille",
+    "type": "numérique",
+    "prix_indicatif": "Gratuit / prix libre",
+    "description": "Dix idées de sorties accessibles, testées et adaptées aux familles, avec conseils pratiques.",
     "statut": "test",
     "image": "assets/images/placeholder-product.svg",
     "bouton_label": "Voir le détail",
-    "lien": "#participer"
+    "lien": ""
   },
   {
-    "id": "p-003",
+    "id": "memory-creole",
     "nom": "Memory créole imprimable",
-    "type": "Jeu imprimable",
-    "prix_indicatif": "9 €",
-    "description": "Un jeu de cartes pour associer mots créoles, images et traductions.",
-    "statut": "bientôt",
+    "type": "jeu",
+    "prix_indicatif": "5 €",
+    "description": "Un jeu de memory à imprimer pour associer mots créoles et images.",
+    "statut": "bientot",
     "image": "assets/images/placeholder-product.svg",
     "bouton_label": "Me prévenir",
-    "lien": "mailto:contact@zarlorpei.re?subject=Memory%20cr%C3%A9ole"
+    "lien": ""
   },
   {
-    "id": "p-004",
-    "nom": "Partenariat Zarlor dann kartié",
-    "type": "Partenariat",
-    "prix_indicatif": "sur devis",
-    "description": "Pour restaurants, gîtes, artisans, associations ou lieux culturels souhaitant faire découvrir un zarlor aux familles.",
+    "id": "partenariat-kartie",
+    "nom": "Partenariat « Zarlor dann kartié »",
+    "type": "partenariat",
+    "prix_indicatif": "Sur devis",
+    "description": "Vous êtes un restaurant, un gîte, un artisan ou une association ? Proposez un zarlor à faire découvrir aux familles.",
     "statut": "disponible",
     "image": "assets/images/placeholder-product.svg",
     "bouton_label": "Proposer un partenariat",
-    "lien": "mailto:contact@zarlorpei.re?subject=Partenariat%20Zarlor%20dann%20karti%C3%A9"
+    "lien": ""
   }
 ]

@@ -1,16 +1,27 @@
 {
-  "site_name": "Nout Ti Zarlor Péi",
-  "tagline": "La Réunion à découvrir, apprendre et transmettre en famille.",
-  "description": "Une mini application culturelle pour explorer les lieux péi, apprendre des mots créoles, jouer en famille, retrouver des souvenirs lontan et garder vivante nout culture.",
-  "version": "1.0.0",
-  "contact_email": "contact@zarlorpei.re",
-  "whatsapp": "262692000000",
-  "google_form_url": "https://forms.gle/remplacer-ce-lien",
-  "partner_url": "mailto:contact@zarlorpei.re?subject=Partenariat%20Nout%20Ti%20Zarlor%20P%C3%A9i",
-  "socials": {
-    "facebook": "https://facebook.com/",
-    "instagram": "https://instagram.com/",
+  "site": {
+    "nom": "Nout Ti Zarlor Péi",
+    "sous_titre": "La Réunion à découvrir, apprendre et transmettre en famille.",
+    "promesse": "Explore les lieux péi, apprends des mots créoles, découvre des souvenirs lontan, joue en famille et garde vivante la culture réunionnaise.",
+    "version": "1.0.0",
+    "langue": "fr",
+    "url": "https://votre-utilisateur.github.io/nout-ti-zarlor-pei/"
+  },
+  "contact": {
+    "email": "bonjour@example.re",
+    "whatsapp": "262692000000",
+    "google_form_url": "https://forms.gle/REMPLACEZ_MOI",
+    "newsletter_url": ""
+  },
+  "reseaux": {
+    "instagram": "https://instagram.com/votre_compte",
+    "facebook": "https://facebook.com/votre_page",
+    "tiktok": "",
     "youtube": ""
   },
-  "seo_base_url": "https://monsieurj.github.io/nout-ti-zarlor-pei/"
+  "boutique": {
+    "mode_contact": "email",
+    "_commentaire_mode_contact": "Valeurs possibles : email | whatsapp | form. Détermine l'action des boutons de la boutique et de la participation."
+  },
+  "_aide": "Modifiez ce fichier pour changer les coordonnées, réseaux et l'URL du site. Aucune ligne de code à toucher."
 }
