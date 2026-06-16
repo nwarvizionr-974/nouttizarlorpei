@@ -6,7 +6,7 @@
     "difficulte": "facile",
     "temps": "45 min",
     "portions": 4,
-    "image": "assets/images/placeholder-recipe.svg",
+    "image": "assets/images/rougail-saucisse.jpg",
     "introduction": "Le plat du dimanche par excellence : des saucisses fumées mijotées dans une sauce tomate parfumée.",
     "ingredients": [
       "500 g de saucisses fumées péi",
@@ -14,7 +14,7 @@
       "2 oignons",
       "3 gousses d'ail",
       "1 morceau de gingembre",
-      "Thym, curcuma (safran péi), sel",
+      "Thym,, sel",
       "Un peu d'huile"
     ],
     "etapes": [
