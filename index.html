@@ -7,7 +7,7 @@
   <!-- ============ SEO ============ -->
   <title>Nout Ti Zarlor Péi – La Réunion à découvrir en famille</title>
   <meta name="description" content="Découvre La Réunion en famille avec Nout Ti Zarlor Péi : carte interactive, mots créoles, quiz, recettes péi, souvenirs lontan et trésors culturels à transmettre." />
-  <meta name="theme-color" content="#173B30" />
+  <meta name="theme-color" content="#11A39C" />
   <meta name="author" content="Nout Ti Zarlor Péi" />
   <link rel="canonical" href="https://votre-utilisateur.github.io/nout-ti-zarlor-pei/" />
 
@@ -32,7 +32,7 @@
   <!-- ============ Polices Google (faciles à changer) ============ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
 
   <!-- ============ Leaflet (carte) ============ -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -90,37 +90,25 @@
 
   <main id="contenu">
 
-    <!-- ====================== HERO (cinématographique sombre) ====================== -->
+    <!-- ====================== HERO (village péi) ====================== -->
     <section class="hero" id="accueil" aria-labelledby="hero-title">
-      <!-- feuillage qui déborde des marges -->
-      <img src="assets/illustrations/foliage-corner.svg" alt="" class="foliage foliage--tl" aria-hidden="true" />
-      <img src="assets/illustrations/foliage-corner.svg" alt="" class="foliage foliage--tr" aria-hidden="true" />
-      <img src="assets/illustrations/foliage-frond.svg" alt="" class="foliage foliage--rs" aria-hidden="true" />
-      <!-- viseurs décoratifs -->
-      <span class="cross cross--1" aria-hidden="true"></span>
-      <span class="cross cross--2" aria-hidden="true"></span>
-
+      <span class="hero__sun" aria-hidden="true"></span>
       <div class="wrap hero__inner">
-        <p class="eyebrow eyebrow--center hero__kicker">Mini application culturelle péi · La Réunion</p>
-        <h1 id="hero-title" class="hero__title">
-          <span class="hero__pre">Nout Ti</span>
-          <span class="hero__big">Zarlor<span class="hero__big-2"> Péi</span></span>
-          <img src="assets/illustrations/bloom.svg" alt="" class="hero__bloom" aria-hidden="true" />
-        </h1>
-        <p class="hero__sub">La Réunion à découvrir, apprendre et transmettre en famille.</p>
+        <p class="eyebrow eyebrow--center hero__kicker">Mini app kiltirèl · La Réunion</p>
+        <h1 id="hero-title" class="hero__title">Nout Ti <em>Zarlor</em> Péi</h1>
+        <p class="hero__sub">La Réunion à découvrir, apprendre et transmettre an fanmiy.</p>
         <div class="hero__cta">
           <a class="btn btn--primary" href="#carte">Découvrir la carte</a>
           <a class="btn btn--ghost" href="#kreol">Apprendre un mot créole</a>
           <a class="btn btn--ghost" href="#jeux">Jouer en famille</a>
         </div>
-        <p class="hero__stat"><strong>Lieux · mots créoles · jeux · recettes · souvenirs</strong><span>tout péi, à hauteur de famille</span></p>
       </div>
-
-      <a class="hero__scroll" href="#univers" aria-label="Descendre vers le contenu"><span aria-hidden="true">↓</span></a>
+      <img src="assets/illustrations/village.svg" alt="" class="hero__village" aria-hidden="true" />
     </section>
 
     <!-- ====================== LES UNIVERS ZARLOR ====================== -->
-    <section class="section" id="univers" aria-labelledby="univers-title">
+    <section class="section case case--turquoise" id="univers" aria-labelledby="univers-title">
+      <div class="eave" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Bienvenue dann nout péi</p>
         <h2 id="univers-title" class="section__title center">Les univers Zarlor</h2>
@@ -136,7 +124,8 @@
     </section>
 
     <!-- ====================== CARTE INTERACTIVE ====================== -->
-    <section class="section section--alt" id="carte" aria-labelledby="carte-title">
+    <section class="section case case--sky" id="carte" aria-labelledby="carte-title">
+      <div class="eave" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Zarlor dann kartié</p>
         <h2 id="carte-title" class="section__title center">Carte péi</h2>
@@ -172,9 +161,8 @@
     </section>
 
     <!-- ====================== KRÉOL DANN POCHE (bande sombre) ====================== -->
-    <section class="section section--dark" id="kreol" aria-labelledby="kreol-title">
-      <img src="assets/illustrations/compass.svg" alt="" class="ornament-compass" aria-hidden="true" />
-      <img src="assets/illustrations/foliage-frond.svg" alt="" class="foliage foliage--ls" aria-hidden="true" />
+    <section class="section case case--mango" id="kreol" aria-labelledby="kreol-title">
+      <div class="eave" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Nout lang</p>
         <h2 id="kreol-title" class="section__title center">Kréol dann poche</h2>
@@ -207,7 +195,8 @@
     </section>
 
     <!-- ====================== JEUX / QUIZ ====================== -->
-    <section class="section section--alt" id="jeux" aria-labelledby="jeux-title">
+    <section class="section case case--coral" id="jeux" aria-labelledby="jeux-title">
+      <div class="eave" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow eyebrow--center">An plas, partu !</p>
         <h2 id="jeux-title" class="section__title center">Kosa mi lé&nbsp;?</h2>
@@ -232,7 +221,8 @@
     </section>
 
     <!-- ====================== DANN MARMIT (recettes) ====================== -->
-    <section class="section" id="recettes" aria-labelledby="recettes-title">
+    <section class="section case case--lime" id="recettes" aria-labelledby="recettes-title">
+      <div class="eave" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Lodèr la kwizine</p>
         <h2 id="recettes-title" class="section__title center">Dann marmit</h2>
@@ -248,8 +238,8 @@
     </section>
 
     <!-- ====================== SOUVENIR LONTAN (bande sombre) ====================== -->
-    <section class="section section--dark" id="souvenirs" aria-labelledby="souvenirs-title">
-      <img src="assets/illustrations/foliage-corner.svg" alt="" class="foliage foliage--bl" aria-hidden="true" />
+    <section class="section case case--lilac" id="souvenirs" aria-labelledby="souvenirs-title">
+      <div class="eave" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Mémwar péi</p>
         <h2 id="souvenirs-title" class="section__title center">Souvenir lontan</h2>
@@ -258,7 +248,8 @@
     </section>
 
     <!-- ====================== BOUTIQUE ====================== -->
-    <section class="section" id="boutique" aria-labelledby="boutique-title">
+    <section class="section case case--turquoise" id="boutique" aria-labelledby="boutique-title">
+      <div class="eave" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Pou pli tar</p>
         <h2 id="boutique-title" class="section__title center">Ti boutique — Zarlor à venir</h2>
@@ -269,7 +260,8 @@
     </section>
 
     <!-- ====================== PARTICIPER ====================== -->
-    <section class="section section--alt" id="participer" aria-labelledby="participer-title">
+    <section class="section case case--coral" id="participer" aria-labelledby="participer-title">
+      <div class="eave" aria-hidden="true"></div>
       <div class="wrap narrow">
         <p class="eyebrow eyebrow--center">Ansanm</p>
         <h2 id="participer-title" class="section__title center">Partaz out zarlor</h2>
@@ -284,7 +276,7 @@
 
   <!-- ====================== FOOTER ====================== -->
   <footer class="site-footer">
-    <div class="lambrequin lambrequin--up" aria-hidden="true"></div>
+    <div class="eave" aria-hidden="true"></div>
     <div class="wrap footer-inner">
       <div class="footer-col">
         <p class="brand brand--footer"><img src="assets/icons/icon-192.png" alt="" width="34" height="34" /><span>Nout Ti Zarlor Péi</span></p>
