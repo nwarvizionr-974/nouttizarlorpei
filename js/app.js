@@ -155,13 +155,19 @@ async function renderRecipes() {
       (!c || r.categorie === c) &&
       (!q || (r.titre + " " + (r.tags || []).join(" ")).toLowerCase().includes(q)));
     list.innerHTML = filtered.length ? filtered.map(r => `
-      <article class="ecard">
-        <img src="${ZP.esc(r.image)}" alt="${ZP.esc(r.titre)}" loading="lazy" onerror="ZP.imgFallback(this,'recipe')">
-        <div class="ecard__body">
-          <span class="meta">${ZP.esc(r.categorie)} · ${ZP.esc(r.temps)} · ${ZP.esc(r.difficulte)}</span>
-          <h3>${ZP.esc(r.titre)}</h3>
-          <p>${ZP.esc(r.introduction)}</p>
-          <button class="btn btn--ghost" onclick='ZP.openRecipe(${JSON.stringify(r).replace(/'/g, "&#39;")})'>Voir la recette</button>
+      <article class="wcard">
+        <div class="wcard__ph">
+          <img src="${ZP.esc(r.image)}" alt="${ZP.esc(r.titre)}" loading="lazy" onerror="ZP.imgFallback(this,'recipe')">
+          <span class="wcard__badge"><span class="star">★</span> ${ZP.esc(r.difficulte)}</span>
+          <span class="wcard__brand">Dann marmit</span>
+        </div>
+        <div class="wcard__panel">
+          <h3 class="wcard__name">${ZP.esc(r.titre)}</h3>
+          <p class="wcard__loc">🍲 ${ZP.esc(r.categorie)}</p>
+          <div class="wcard__foot">
+            <span class="wcard__meta"><strong>${ZP.esc(r.temps)}</strong>${r.portions ? ZP.esc(r.portions) + " parts" : ""}</span>
+            <button class="wcard__link" onclick='ZP.openRecipe(${JSON.stringify(r).replace(/'/g, "&#39;")})'>Voir la recette <span class="arr">↗</span></button>
+          </div>
         </div>
       </article>`).join("") : `<p class="center">Aucune recette trouvée.</p>`;
   }
@@ -175,7 +181,7 @@ ZP.openRecipe = function (r) {
     <button class="modal__close" aria-label="Fermer" onclick="ZP.closeModal()">×</button>
     <img src="${ZP.esc(r.image)}" alt="" onerror="ZP.imgFallback(this,'recipe')">
     <div class="modal__inner">
-      <span class="meta" style="color:var(--gold);font-weight:700">${ZP.esc(r.categorie)} · ${ZP.esc(r.temps)} · ${ZP.esc(r.portions)} parts</span>
+      <span class="meta" style="color:var(--orange);font-weight:700">${ZP.esc(r.categorie)} · ${ZP.esc(r.temps)} · ${ZP.esc(r.portions)} parts</span>
       <h2>${ZP.esc(r.titre)}</h2>
       <p>${ZP.esc(r.introduction)}</p>
       <h3>Ingrédients</h3>
@@ -195,13 +201,19 @@ async function renderArticles() {
   if (!list) return;
   const data = await ZP.getJSON("data/articles.json") || [];
   list.innerHTML = data.map(a => `
-    <article class="ecard">
-      <img src="${ZP.esc(a.image)}" alt="${ZP.esc(a.titre)}" loading="lazy" onerror="ZP.imgFallback(this,'article')">
-      <div class="ecard__body">
-        <span class="meta">${ZP.esc(a.categorie)}</span>
-        <h3>${ZP.esc(a.titre)}</h3>
-        <p>${ZP.esc(a.resume)}</p>
-        <button class="btn btn--ghost" onclick='ZP.openArticle(${JSON.stringify(a).replace(/'/g, "&#39;")})'>Lire</button>
+    <article class="wcard">
+      <div class="wcard__ph">
+        <img src="${ZP.esc(a.image)}" alt="${ZP.esc(a.titre)}" loading="lazy" onerror="ZP.imgFallback(this,'article')">
+        <span class="wcard__badge"><span class="star">✦</span> ${ZP.esc(a.categorie)}</span>
+        <span class="wcard__brand">Souvenir lontan</span>
+      </div>
+      <div class="wcard__panel">
+        <h3 class="wcard__name">${ZP.esc(a.titre)}</h3>
+        <p class="wcard__loc">🕰️ ${ZP.esc(a.resume)}</p>
+        <div class="wcard__foot">
+          <span class="wcard__meta">${a.a_verifier ? '<span class="tag tag--verif">à vérifier</span>' : ""}</span>
+          <button class="wcard__link" onclick='ZP.openArticle(${JSON.stringify(a).replace(/'/g, "&#39;")})'>Lire <span class="arr">↗</span></button>
+        </div>
       </div>
     </article>`).join("");
 }
@@ -211,7 +223,7 @@ ZP.openArticle = function (a) {
     <button class="modal__close" aria-label="Fermer" onclick="ZP.closeModal()">×</button>
     <img src="${ZP.esc(a.image)}" alt="" onerror="ZP.imgFallback(this,'article')">
     <div class="modal__inner">
-      <span class="meta" style="color:var(--gold);font-weight:700">${ZP.esc(a.categorie)}</span>
+      <span class="meta" style="color:var(--orange);font-weight:700">${ZP.esc(a.categorie)}</span>
       <h2>${ZP.esc(a.titre)}</h2>
       <p>${ZP.esc(a.contenu)}</p>
       ${a.a_verifier ? `<p class="tag tag--verif">Contenu à vérifier avant diffusion</p>` : ""}
@@ -229,14 +241,19 @@ async function renderProducts(settings) {
     const mode = p.id === "partenariat-kartie" ? (settings.boutique?.mode_contact || "email") : (settings.boutique?.mode_contact || "email");
     const href = p.lien || ZP.contactLink(settings, "à propos de « " + p.nom + " »", mode);
     return `
-    <article class="ecard">
-      <img src="${ZP.esc(p.image)}" alt="${ZP.esc(p.nom)}" loading="lazy" onerror="ZP.imgFallback(this,'product')">
-      <div class="ecard__body">
-        <span class="statut ${ZP.esc(p.statut)}">${ZP.esc(p.statut)}</span>
-        <h3 style="margin-top:.4rem">${ZP.esc(p.nom)}</h3>
-        <p>${ZP.esc(p.description)}</p>
-        <p class="price">${ZP.esc(p.prix_indicatif)}</p>
-        <a class="btn btn--primary" href="${ZP.esc(href)}" target="_blank" rel="noopener">${ZP.esc(p.bouton_label || "En savoir plus")}</a>
+    <article class="wcard">
+      <div class="wcard__ph">
+        <img src="${ZP.esc(p.image)}" alt="${ZP.esc(p.nom)}" loading="lazy" onerror="ZP.imgFallback(this,'product')">
+        <span class="wcard__badge statut ${ZP.esc(p.statut)}">${ZP.esc(p.statut)}</span>
+        <span class="wcard__brand">Ti boutik</span>
+      </div>
+      <div class="wcard__panel">
+        <h3 class="wcard__name">${ZP.esc(p.nom)}</h3>
+        <p class="wcard__loc">${ZP.esc(p.description)}</p>
+        <div class="wcard__foot">
+          <span class="wcard__meta"><strong>${ZP.esc(p.prix_indicatif)}</strong></span>
+          <a class="wcard__link" href="${ZP.esc(href)}" target="_blank" rel="noopener">${ZP.esc(p.bouton_label || "En savoir plus")} <span class="arr">↗</span></a>
+        </div>
       </div>
     </article>`;
   }).join("");

@@ -32,7 +32,7 @@
   <!-- ============ Polices Google (faciles à changer) ============ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500;1,9..144,600;0,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- ============ Leaflet (carte) ============ -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -85,30 +85,46 @@
       </nav>
 
       <button class="btn btn--install" id="installBtn" hidden>Installer l'app</button>
+      <a class="header-cta" href="#participer">Partaz out zarlor</a>
     </div>
   </header>
 
   <main id="contenu">
 
-    <!-- ====================== HERO (village péi) ====================== -->
+    <!-- ====================== HERO (photo plein cadre) ====================== -->
     <section class="hero" id="accueil" aria-labelledby="hero-title">
-      <span class="hero__sun" aria-hidden="true"></span>
+      <button class="hero__arrow hero__arrow--l" aria-hidden="true" tabindex="-1">‹</button>
       <div class="wrap hero__inner">
-        <p class="eyebrow eyebrow--center hero__kicker">Ti' app kiltirèl · La Réunion</p>
-        <h1 id="hero-title" class="hero__title">Nout Ti <em>Zarlor</em> Péi</h1>
-        <p class="hero__sub">La Réunion à découvrir, apprendre et transmettre en fami.</p>
+        <p class="eyebrow eyebrow--center">Nout Ti Zarlor Péi · mini app kiltirèl</p>
+        <h1 id="hero-title" class="hero__title">Dékouv La Réunion <em>an fanmiy</em></h1>
+        <p class="hero__sub">Lieux à visiter, mots créoles, jeux, recettes et souvenirs lontan — à hauteur d'enfant, de parent et de grand-parent.</p>
         <div class="hero__cta">
           <a class="btn btn--primary" href="#carte">Découvrir la carte</a>
           <a class="btn btn--ghost" href="#kreol">Apprendre un mot créole</a>
-          <a class="btn btn--ghost" href="#jeux">Jouer en famille</a>
         </div>
       </div>
-      <img src="assets/illustrations/village.svg" alt="" class="hero__village" aria-hidden="true" />
+      <button class="hero__arrow hero__arrow--r" aria-hidden="true" tabindex="-1">›</button>
+    </section>
+
+    <!-- ====================== MISSION (bande verte) ====================== -->
+    <section class="band band--green" id="mission" aria-labelledby="mission-title">
+      <img src="assets/illustrations/doodle-cloud.svg" alt="" class="doodle doodle--cloud" aria-hidden="true" />
+      <img src="assets/illustrations/doodle-wave.svg" alt="" class="doodle doodle--wave" aria-hidden="true" />
+      <div class="wrap mission">
+        <div class="mission__media">
+          <img src="assets/images/placeholder-article.svg" alt="Famille découvrant La Réunion" class="mission__circle" loading="lazy" />
+        </div>
+        <div class="mission__text">
+          <p class="eyebrow">Nout démarsh</p>
+          <h2 id="mission-title" class="section__title">Faire vivre nout kiltir, an fanmiy</h2>
+          <p>Zarlor Péi – Ti Famille fait découvrir La Réunion de façon simple, ludique et chaleureuse&nbsp;: ses lieux, sa langue, sa cuisine, ses souvenirs et ses petits trésors du quotidien. Une culture qui se transmet dans les balades, les repas, les mots et les moments partagés.</p>
+          <a class="btn btn--ghost" href="#univers">Découvrir l'univers</a>
+        </div>
+      </div>
     </section>
 
     <!-- ====================== LES UNIVERS ZARLOR ====================== -->
-    <section class="section case case--turquoise" id="univers" aria-labelledby="univers-title">
-      <div class="eave" aria-hidden="true"></div>
+    <section class="section band band--cream" id="univers" aria-labelledby="univers-title">
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Bienvenue dann nout péi</p>
         <h2 id="univers-title" class="section__title center">Les univers Zarlor</h2>
@@ -124,8 +140,7 @@
     </section>
 
     <!-- ====================== CARTE INTERACTIVE ====================== -->
-    <section class="section case case--sky" id="carte" aria-labelledby="carte-title">
-      <div class="eave" aria-hidden="true"></div>
+    <section class="section band band--cream" id="carte" aria-labelledby="carte-title">
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Zarlor dann kartié</p>
         <h2 id="carte-title" class="section__title center">Carte péi</h2>
@@ -161,8 +176,7 @@
     </section>
 
     <!-- ====================== KRÉOL DANN POCHE (bande sombre) ====================== -->
-    <section class="section case case--mango" id="kreol" aria-labelledby="kreol-title">
-      <div class="eave" aria-hidden="true"></div>
+    <section class="section band band--cream" id="kreol" aria-labelledby="kreol-title">
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Nout lang</p>
         <h2 id="kreol-title" class="section__title center">Kréol dann poche</h2>
@@ -195,8 +209,7 @@
     </section>
 
     <!-- ====================== JEUX / QUIZ ====================== -->
-    <section class="section case case--coral" id="jeux" aria-labelledby="jeux-title">
-      <div class="eave" aria-hidden="true"></div>
+    <section class="section band band--cream" id="jeux" aria-labelledby="jeux-title">
       <div class="wrap">
         <p class="eyebrow eyebrow--center">An plas, partu !</p>
         <h2 id="jeux-title" class="section__title center">Kosa mi lé&nbsp;?</h2>
@@ -221,8 +234,7 @@
     </section>
 
     <!-- ====================== DANN MARMIT (recettes) ====================== -->
-    <section class="section case case--lime" id="recettes" aria-labelledby="recettes-title">
-      <div class="eave" aria-hidden="true"></div>
+    <section class="section band band--cream" id="recettes" aria-labelledby="recettes-title">
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Lodèr la kwizine</p>
         <h2 id="recettes-title" class="section__title center">Dann marmit</h2>
@@ -238,8 +250,7 @@
     </section>
 
     <!-- ====================== SOUVENIR LONTAN (bande sombre) ====================== -->
-    <section class="section case case--lilac" id="souvenirs" aria-labelledby="souvenirs-title">
-      <div class="eave" aria-hidden="true"></div>
+    <section class="section band band--cream" id="souvenirs" aria-labelledby="souvenirs-title">
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Mémwar péi</p>
         <h2 id="souvenirs-title" class="section__title center">Souvenir lontan</h2>
@@ -248,8 +259,7 @@
     </section>
 
     <!-- ====================== BOUTIQUE ====================== -->
-    <section class="section case case--turquoise" id="boutique" aria-labelledby="boutique-title">
-      <div class="eave" aria-hidden="true"></div>
+    <section class="section band band--cream" id="boutique" aria-labelledby="boutique-title">
       <div class="wrap">
         <p class="eyebrow eyebrow--center">Pou pli tar</p>
         <h2 id="boutique-title" class="section__title center">Ti boutique — Zarlor à venir</h2>
@@ -260,8 +270,7 @@
     </section>
 
     <!-- ====================== PARTICIPER ====================== -->
-    <section class="section case case--coral" id="participer" aria-labelledby="participer-title">
-      <div class="eave" aria-hidden="true"></div>
+    <section class="section band band--green" id="participer" aria-labelledby="participer-title">
       <div class="wrap narrow">
         <p class="eyebrow eyebrow--center">Ansanm</p>
         <h2 id="participer-title" class="section__title center">Partaz out zarlor</h2>
@@ -276,7 +285,6 @@
 
   <!-- ====================== FOOTER ====================== -->
   <footer class="site-footer">
-    <div class="eave" aria-hidden="true"></div>
     <div class="wrap footer-inner">
       <div class="footer-col">
         <p class="brand brand--footer"><img src="assets/icons/icon-192.png" alt="" width="34" height="34" /><span>Nout Ti Zarlor Péi</span></p>

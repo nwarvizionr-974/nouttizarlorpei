@@ -52,12 +52,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       <button class="modal__close" aria-label="Fermer" onclick="ZP.closeModal()">×</button>
       <img src="${ZP.esc(p.image)}" alt="" onerror="ZP.imgFallback(this,'place')">
       <div class="modal__inner">
-        <span class="meta" style="color:var(--gold);font-weight:700">${ZP.esc(p.categorie)} · ${ZP.esc(p.commune)} (${ZP.esc(p.region)})</span>
+        <span class="meta" style="color:var(--orange);font-weight:700">${ZP.esc(p.categorie)} · ${ZP.esc(p.commune)} (${ZP.esc(p.region)})</span>
         <h2>${ZP.esc(p.nom)}</h2>
         <p>${ZP.esc(p.description)}</p>
         <p>${facts.map(f => `<span class="tag">${ZP.esc(f)}</span>`).join(" ")}</p>
         ${p.anecdote ? `<p><strong>Le saviez-vous&nbsp;?</strong> ${ZP.esc(p.anecdote)}</p>` : ""}
-        ${p.conseil_famille ? `<p style="background:var(--green-soft);padding:.8rem 1rem;border-radius:14px"><strong>Conseil famille&nbsp;:</strong> ${ZP.esc(p.conseil_famille)}</p>` : ""}
+        ${p.conseil_famille ? `<p style="background:#E7F0DC;padding:.8rem 1rem;border-radius:14px"><strong>Conseil famille&nbsp;:</strong> ${ZP.esc(p.conseil_famille)}</p>` : ""}
         ${p.a_verifier ? `<p class="tag tag--verif">Info à vérifier avant publication</p>` : ""}
         <div class="card-actions">
           <a class="btn btn--primary" href="${ZP.esc(p.lien_google_maps)}" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
@@ -89,18 +89,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Liste sous la carte
     if (listEl) {
       listEl.innerHTML = filtered.length ? filtered.map(p => `
-        <article class="place-card">
-          <img src="${ZP.esc(p.image)}" alt="${ZP.esc(p.nom)}" loading="lazy" onerror="ZP.imgFallback(this,'place')">
-          <div class="place-card__body">
-            <div class="mot-card__top">
-              <h3>${ZP.esc(p.nom)}</h3>
-              <button class="fav-btn" data-id="${ZP.esc(p.id)}" aria-pressed="${isFav(p.id)}" aria-label="Ajouter aux favoris">★</button>
-            </div>
-            <p class="meta">${ZP.esc(p.commune)} · ${ZP.esc(p.region)}</p>
-            <div>${(p.tags || []).slice(0, 3).map(t => `<span class="tag">${ZP.esc(t)}</span>`).join("")}
-              ${p.a_verifier ? '<span class="tag tag--verif">à vérifier</span>' : ""}</div>
-            <div class="card-actions">
-              <button class="btn btn--ghost" onclick='ZP.openPlace(${JSON.stringify(p).replace(/'/g, "&#39;")})'>Détails</button>
+        <article class="wcard">
+          <div class="wcard__ph">
+            <img src="${ZP.esc(p.image)}" alt="${ZP.esc(p.nom)}" loading="lazy" onerror="ZP.imgFallback(this,'place')">
+            <button class="fav-btn" data-id="${ZP.esc(p.id)}" aria-pressed="${isFav(p.id)}" aria-label="Ajouter aux favoris">★</button>
+            <span class="wcard__badge"><span class="star">★</span> ${ZP.esc(p.niveau_famille || "famille")}</span>
+            <span class="wcard__brand">${ZP.esc(p.commune)}</span>
+          </div>
+          <div class="wcard__panel">
+            <h3 class="wcard__name">${ZP.esc(p.nom)}</h3>
+            <p class="wcard__loc">📍 ${ZP.esc(p.commune)} · ${ZP.esc(p.region)}</p>
+            <div class="wcard__foot">
+              <span class="wcard__meta">${(p.tags || []).slice(0, 2).map(t => `<span class="tag">${ZP.esc(t)}</span>`).join("")}${p.a_verifier ? '<span class="tag tag--verif">à vérifier</span>' : ""}</span>
+              <button class="wcard__link" onclick='ZP.openPlace(${JSON.stringify(p).replace(/'/g, "&#39;")})'>Détails <span class="arr">↗</span></button>
             </div>
           </div>
         </article>`).join("")
